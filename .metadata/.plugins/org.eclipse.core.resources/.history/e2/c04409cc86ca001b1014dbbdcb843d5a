@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+alert('확인 버튼 하나 있다')
+input= confirm('확인 취소가 있다')
+alert('input : '+input)
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

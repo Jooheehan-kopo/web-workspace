@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#star {
+	position: absolute;
+	top: 170px;
+	left: 35px;
+}
+</style>
+
+</head>
+<body>
+	<div id="map">
+		<img
+			src="https://img.japankuru.com/prg_img/img/img2021031714182038076500.png">
+		<p id="star">
+			<img src="star.png">
+		</p>
+
+	</div>
+</body>
+</html>

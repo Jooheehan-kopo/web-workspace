@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<style>
+#ancester * {
+	display: block;
+	border: 1px solid red;
+	margin: 10px;
+	padding: 10px;
+}
+</style>
+<script>
+
+//1. 자식에서 부모
+//트리구조형태를 가지고 있어서. 한명의 부모는 자식이 많음. 자식은 부모가 한명뿐임.
+
+	$(document).ready(function() {
+		//$('span').parent().css('border-color','blue')  //span의 부모 li /p
+		// $('span').parent().parent().css('border-color', 'blue')
+		//$('span').parents().css('border-color', 'blue')
+		//$('span').parents().css('border', '2px solid blue') //모든 부모로 body도 포함.
+		//$('span').parents('div').css('border', '2px solid blue')  //span의 조상들중에 div.  //remove 와도 같음
+		//$('span').parentsUntil('div').css('border-color','blue') //span 태그에서부터 div가 나오기전까지.바꿔라
+		
+		
+//2. 부모에서 자식 : 자식의 수가 많아서. 트리구조야. 2의제곱으로 늘어남,,?	
+		$('#ancester').children().css('border-color','blue') //조상의 자식만 찾는거임. --> body만 나옴
+		$('#ancester').children('#div02').css('border-color','blue') //자식중에 div02만
+		
+	})
+</script>
+
+</head>
+<body>
+	<div id="ancester">
+		<div id="div01">
+			div01
+			<ul>
+				ul
+				<li>li <span>span</span>
+				</li>
+			</ul>
+		</div>
+		<div id="div02">
+			div02
+			<p>
+				p <span>span</span>
+			</p>
+		</div>
+	</div>
+</body>
+</html>

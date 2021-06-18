@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let cnt=''
+	function clickBtn(){
+		this.cnt++
+	}
+	window.onload=function(){
+		let h1Tag = document.createElement("h1")
+		let text = document.createTextNode(cnt+'번 클릭하셨습니다.')
+		h1Tag.appendChild(text)
+		document.body.appendChild(h1Tag)
+	}
+
+</script>
+</head>
+<body>
+	0번 클릭
+	<input type="button" value="클릭" onclick="clickBtn()">
+</body>
+</html>

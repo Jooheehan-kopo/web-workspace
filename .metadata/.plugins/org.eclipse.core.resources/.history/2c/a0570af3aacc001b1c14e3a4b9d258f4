@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	testFunction()
+	function testFunction(){
+		alert("test fuction 호출..")
+	}
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

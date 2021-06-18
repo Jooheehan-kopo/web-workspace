@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function func() {
+		//alert('call()')
+		console.log(arguments) // 함수의 매개변수와 관련.
+		switch(arguments.length){
+		case 0:
+			alert('call....')
+			break;
+		case 1:
+			alert('data: '+arguments[0])
+			break;
+		case 2:
+			alert(`no:${arguments[0]}, msg:${arguments[1]}`)
+			break;
+		}
+	}
+	//func()
+	func('a')
+	func(12,'hello')  //매개변수가 여러개 들어올 수 있음. 들어오는 값을 함수가 알아야함 -> arguments 가 알아내줌.
+	
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body * {
+		display: block;
+		border: 2px solid red;
+		padding: 10px;
+		margin: 10px;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+//형제들
+
+	$(document).ready(function() {
+		//$('h2').siblings().css('border', '2px solid blue') //h2의 밖에 다.
+		//$('h2').siblings('h3').css('border', '2px solid blue')//h2형제중 h3만 바꿀꺼임.
+		//$('h2').next().css('border', '2px solid blue') //h2의 바로뒤의 값
+		//$('h2').prev().css('border', '2px solid blue') //앞의 것.
+		//$('h1').nextUntil('p').css('border', '2px solid blue')
+		//$('h1').prevAll().css('border', '2px solid blue')  //H1 태그 앞의것 전부
+		//$('p').eq(1).css('border', '2px solid blue')  //p태그 중에서 두번째꺼. 인덱스 값으로 써줌. eq써서.
+		//$('div > *').eq(6).css('border', '2px solid blue')  //div보다 작은 것들중
+		//$('div > *').not('p').css('border', '2px solid blue') //div 자식들중 p태그가 아닌것.
+		//$('div > *').find('p').css('border', '2px solid blue') //선택된것 기준으로 이하의 것을 찾음. - 하나 더 밑임. 바로 밑의 것을 찾기위해서는, filter를 씀
+		$('div > *').filter('p').css('border', '2px solid blue') //이렇게해야 div>p 들이 나옴.
+		
+		//find와 filter의 차이. 자손들'의' / 기준의''
+		
+	})
+</script>
+</head>
+<body>
+	<div>
+		div1
+		<p>p1-1</p>
+		<span>span</span>
+		<h1>h1</h1>
+		<h2>h2</h2>
+		<h3>
+			h3
+			<p>p1-1-</p>
+		</h3>
+		<p>p1-2</p>
+	</div>
+	<div>
+		div2
+		<h2>h2</h2>
+		<h3>h3</h3>
+		<p>p2-1</p>
+	</div>
+</body>
+</html>

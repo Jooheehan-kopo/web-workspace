@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#numberlist li {
+	float: left;
+	margin: 20px;
+	font-size: 16pt;
+	list-style-type: none;
+}
+li:first-child{
+color:green;
+}
+
+</style>
+
+
+</head>
+<body>
+	<ul id="number
+	list">
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+		<li>five</li>
+		<li>six</li>
+		<li>seven</li>
+		<li>eight</li>
+		<li>nine</li>
+		<li>ten</li>
+
+	</ul>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+
+body{
+display: flex;
+align-items: center;  
+height:800px;
+}
+	div {
+		width: 100px;
+		height: 100px;
+		position: relative;
+		line-height:100px;
+		text-align: center;
+		float:left;
+	}
+
+
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		let week = ''
+		$('div').mouseenter(function(){
+			week = $(this).html()
+			$(this).html('<strong>'+week+"요일</strong>")
+			$(this).animate({
+				height:'200px',
+				width:'200px',
+				'line-height':'200px'
+				
+			})
+		})
+		$('div').mouseleave(function(){
+			$(this).html(week)
+			$(this).animate({
+				height :'100px',
+				width:'100px',
+				'line-height':'100px'
+			})
+		})
+	
+		
+	})
+</script>
+
+</head>
+<body>
+	<div id = "mon" style="background-color:red">월</div>
+	<div id = "tue" style="background-color:orange">화</div>
+	<div id = "wed" style="background-color:yellow">수</div>
+	<div id = "thrs" style="background-color:green">목</div>
+	<div id = "fri" style="background-color:blue">금</div>
+	<div id = "sat" style="background-color: lightblue">토</div>
+	<div id = "sun" style="background-color: purple">일</div>
+</body>
+</html>

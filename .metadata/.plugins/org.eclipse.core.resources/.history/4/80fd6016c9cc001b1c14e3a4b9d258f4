@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+ * 3.숫자변환함수
+  	parseInt()
+  	parse
+ */
+ 
+ 	let won = '1000원' //정수로 바꿔줘야함. --> number! /parseInt
+ 	
+ 	alert(Number(won)+500) 
+	alert(parseInt(won)+500)  // 차이점 (숫자문자열이 아닌 것도 들어간다면, number 일경우 nan(not a number). )
+</script>
+</head>
+<body>
+
+</body>
+</html>

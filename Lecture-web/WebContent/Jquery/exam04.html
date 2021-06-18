@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		alert("!!!")
+//		$('tr').css('background-color','yellow') //배경색 주기
+		$('tr:even').css('background-color','yellow') //짝수만, odd는 홀수만.
+		
+		$('h2').dblclick(function(){   //더블클릭시 사라짐.
+			$(this).hide()
+		})
+		
+		$('h2').mouseenter(function() {
+			$(this).css('background-color','pink')
+		})  //마우스가 안으로 들어갈때.
+		
+		$('h2').mouseleave(function(){
+			$(this).css("background-color",'white')
+		})
+		
+		//위의 두개를 한번에 쓰는 것. 
+		//$('h2').hover(mouseenter,mouseleave) 
+		$('h2').hover(function(){
+			$(this).css('background-color','pink')
+		},function(){
+			$(this).css("background-color",'white')
+		}) 
+	})
+</script>
+
+
+</head>
+<body>
+	<h2>회원명부</h2>
+	<table border="1">
+
+		<tr>
+			<th>이름</th>
+			<th>전화번호</th>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-2222-3333</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-2222-3333</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-2222-3333</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-2222-3333</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-2222-3333</td>
+		</tr>
+		<tr>
+			<td>홍길동</td>
+			<td>010-2222-3333</td>
+		</tr>
+	
+	</table>
+</body>
+</html>

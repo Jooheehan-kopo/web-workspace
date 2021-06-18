@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	img {
+		width: 200px;
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('body').append('<img src="/Lecture-Web/css/images/keyboard-cat.png">')
+	})
+	
+	//appand 부모에 새로운 자식을 맨마지막에 추가.
+</script>
+</head>
+<body>
+		<img src="/Lecture-web/css/img/cat.jpg">
+	<img src="/Lecture-web/css/img/simpson.gif">
+	<img src="/Lecture-web/css/img/panda.jpg">
+	<img src="/Lecture-web/css/img/toby.gif">
+	<br><br>
+	<button>click</button>
+</body>
+</html>

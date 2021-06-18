@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script >
+
+/*
+ * BOM (브라우져 객체모델)
+ 	-window : 브라우저의 최상의 객체
+ 	  -location
+ 	  -screen  : 창을 크고 작게
+ 	  -history  : 앞뒤로가기
+ 	  -document  : 창에 입력하는것,,,??
+ 	  -navigator : 
+ */
+ 
+ window.alert('hello') //윈도우 객체안에 포함이 되어있음.
+ 
+// window.open("이름..?","팝업창 설정","속성")
+ let sub = window.open("http://naver.com","","width=500, height=400")
+if(!sub){
+	alert('팝업창 설정을 확인하세요')
+}
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

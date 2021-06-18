@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function() {
+		//밑의 내용이 잠깐 떴다가 사라짐.
+		alert('inner text: ' + document.body.innerText) //바디안의 택스트 호출
+		alert('inner HTML: ' + document.body.innerHTML) //안의 바디 <> 까지 출력함
+		
+		let list =''
+		list+= '<ul>'
+		list+= '<li>aaa</li>'
+		list+= '<li>bbb</li>'
+		list+= '<li>ccc</li>'
+		list+= '</ul>'
+	}
+</script>
+</head>
+<body>
+	<h2>안녕하세요</h2>
+	<h2>hello</h2>
+</body>
+</html>

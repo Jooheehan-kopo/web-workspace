@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('div').hide(1000) //왼쪽으로.숨기고
+		$('div').show(1000)
+
+		$('div').toggle(1000) //계속 반복하게햊ㅁ.
+		$('div').toggle(1000) //계속 반복하게햊ㅁ.
+
+		$('div').fadeOut(1000) //투명도
+		$('div').fadeIn(1000) //투명도
+		
+		$('div').fadeToggle(1000)
+		$('div').fadeToggle(1000)  //fadein out이 반복되게해줌
+		
+		$('div').fadeTo(1000,0.4)  //투명도 바꿈. 0 안보임 1 완전보임
+	})
+</script>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

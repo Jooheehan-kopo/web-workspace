@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function aaa() {
+		alert('선언적 aaa()호출')
+
+	}
+	var aaa = function() {
+		alert('익명함수 aaa()호출 ..')
+	}
+
+	
+
+	//선언적 함수 : 이름을 가지고 있음
+
+	testFunction() // 호이스팅 일어나고 있음. 밑의 선언된 것 위에서 불러올 수 있음.
+	function testFunction() {
+		alert("test fuction 호출..")
+	}
+
+	function testFunction01(data) {
+		alert('data: ' + data)
+	}
+	testFunction01(123)
+
+	function testFunction02(a, b) {
+		alert(`a:${a},b:${b}`)
+
+	}
+	testFunction02('A', 10)
+
+	function add(a, b) {
+		return a + b
+	}
+	let sum = add(10, 20)
+	alert('총합: ' + sum)
+
+	
+	//익명적 합수
+	var func = function() { //test() // 이름 쓸필요없음
+		alert('test()...')
+	}
+	
+	function callbackFunc(f) { // 그걸 f 로 받아
+		f()
+		
+	}
+	
+	function getSum(a,b) {
+		let s =0;
+		while(a<=b){
+			s+= a++;
+		}
+		return s;
+	}
+	
+	function printSum(a,b) {
+		alert(`${a}~ ${b} 총합: ${getSum(a,b)}`)
+		
+	}
+	 printSum(1,10)
+	
+	//
+	function printSum(a,b) {
+		function sum(a,b){
+			let s = 0;
+			while(a<=b){
+				s+= a++;
+			}
+			return s
+		}
+		alert(`${a}~ ${b} 총합 22: ${getSum(a,b)}`)
+	}
+	
+	
+	 callbackFunc(function(){  // 많이 사용함.
+		 alert('익명함수 호출')
+	 })
+	 
+	callbackFunc(func) // 함수 매개변수로 받아. 
+	
+	aaa()
+	func()
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+#numberlist li {
+	float: left;
+	margin: 20px;
+	font-size: 16pt;
+	list-style-type: none;
+}
+
+li:first-child {
+	color: green;
+}
+
+li:last-child {
+	color: blue
+}
+
+li:nth-child(2n) {
+	color: orange
+}
+
+li:nth-child(3n) {
+	color: purple
+}
+
+P {
+	clear: left /*clear:both 양쪽다 무효화*/
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+}
+
+a:active {
+	color: pink;
+	font-weight: bold;
+}
+
+a:hover {
+	background-color: yellow;
+	text-decoration: underline;
+}
+
+p.text::first-letter {
+	font-size: 4em;
+}
+
+p.text::selection {
+	background-color: yellow;
+}
+
+p.text::first-line {
+	text-decoration: underline;
+}
+
+h1:first-of-type {
+	color: red
+}
+
+h2:last-of-type {
+	color: green;
+}
+
+h3:only-of-type {
+	background-color: pink;
+}
+
+h2:only-child {
+	background-color: lightgray;
+}
+</style>
+
+
+</head>
+<body>
+	<ul id="numberlist">
+		<li>one</li>
+		<li>two</li>
+		<li>three</li>
+		<li>four</li>
+		<li>five</li>
+		<li>six</li>
+		<li>seven</li>
+		<li>eight</li>
+		<li>nine</li>
+		<li>ten</li>
+
+	</ul>
+	<p>
+		<a href="http://www.daum.net"> DAUM</a> <a href="http://www.naver.com">NAVER</a>
+	</p>
+	<p class="text">
+		abcdefghigk<br> lmnopqrst<br> uvwxyz<br>
+	</p>
+	<p class="text">
+		ABCDEFGHIJK<br> LMNOPQRST<br> UVWXYZ<br>
+	</p>
+
+	<h1>header1</h1>
+	<h3>header3</h3>
+	<h2>header2</h2>
+	<h4>header4</h4>
+	<h1>header1</h1>
+	<h2>header2</h2>
+	<h6>header6</h6>
+	<div>
+		<h2>sub02</h2>
+		<h1>sub01</h1>
+	</div>
+	<div>
+		<h2>only-child</h2>
+	</div>
+
+</body>
+</html>

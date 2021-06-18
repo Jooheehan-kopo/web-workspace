@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//자바스크립트의 내장 객체 :number, string, array, math, object, date
+	let str2=new String("hello world")
+	document.write(str2 +'<br>')
+	
+	String.prototype.changeStr =function(){
+		return this.bold()// 내자신을 리턴.
+		
+	}
+	document.write(str2.changeStr() +'<br>')
+	
+	let str = "Hello world"
+	console.log(str.charAt(0))
+	console.log(str.concat('!!!'))
+	let num =100
+	let num2 = new Number(100) //프로토 쓸 수 있음..
+	
+	console.log(typeof num=='number')
+	console.log(typeof num2=='number')
+	
+	console.log(num.constructor ==Number)  //비교할때.
+	console.log(num2.constructor ==Number)
+	
+	Object.prototype.info = function(){
+		alert(this)
+	}
+	num2.info()
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

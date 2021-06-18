@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+header{
+background-color: red;}
+aside{
+background-color: green;}
+section{
+background-color: pink;}
+footer{
+background-color: orange}
+
+</style>
+
+
+</head>
+<body>
+	<header>해더부분</header>
+	<aside> aside area</aside>
+	<section>section area</section>
+	<footer>footer 부분</footer>
+</body>
+</html>

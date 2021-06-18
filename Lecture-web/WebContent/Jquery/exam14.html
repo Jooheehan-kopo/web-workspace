@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+
+// 문장추가시키기 
+
+	$(document).ready(function() {
+		$('#btn01').click(function() {
+			
+			/*
+			let h1Tag = document.createElement('h1')
+			let text = document.createTextNode('세번째 문장')
+			h1Tag.appendChild(text)
+			document.querySelector('div').appendChild(h1Tag)
+			*/
+			$('div').append('<h1>세번째문장</h1>')
+			
+		})
+		
+		$('#btn02').click(function(){
+			$('ul').append('<li>검정</li>')  //뒷쪽에 추가
+			$('ul').prepend('<li>검정</li>') //앞쪽에 추가
+		})
+		
+		$('#btn03').click(function(){
+			//1
+			$('body').prepend('<h4>추가된문장</h4>')
+			$('body').prepend('<h3>또 추가된문장</h3>')
+			$('body').prepend('<h6>마지막으로 추가된 문장</h6>')   
+			
+			//2 이 방법은 마지막으로 기입한값이 위에 나옴. 위의 1과 같이 하려면 순서를 바꿔서 써야함.
+			$('body').prepend('<h4>추가된 문장</h4>', '<h3>또 추가된 문장</h3>', '<h6>마지막으로 추가된 문장</h6>')//한번에 여러명추가 순서가 앞부터!
+		})
+		$('#btn04').click(function(){
+			$('img').after('<b>뒤에 추가</b>') //이미지 뒤에추가.
+			$('img').before('<i>앞에 추가</i>','img 앞에추가')
+		})
+	})
+</script>
+
+</head>
+<body>
+<div> 
+	<h1>첫번째문장</h1>
+	<h1>두번째문장</h1>
+	</div>
+	<h2>색상표</h2>
+	
+	<ul>
+		<li>빨강</li>
+		<li>노랑</li>
+		<li>파랑</li>
+		<li>초록</li>
+	</ul>
+	
+	
+		<h1>Hello</h1>
+		<img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">
+		<h2>good-bye</h2>
+	
+	
+	<button id="btn01">문장추가</button>
+	<button id="btn02">색상추가</button>
+	<button id="btn03">본문추가</button>
+	<button id="btn04">형제추가</button>
+</body>
+</html>

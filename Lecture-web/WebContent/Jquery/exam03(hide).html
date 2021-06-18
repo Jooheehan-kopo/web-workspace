@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+//디스플레이를 none으로 바꿔주는 것.
+// 약간의 애니메이션 효과를 가짐.
+//click - 마우스이벤트
+//.dblclick()  : 더블클릭
+
+$(document).ready(function() {
+	alert("!!!")
+//	$('ul li').hide()
+//	$('ul li:first').hide()  //호랑이만 지워짐. 같은태그라 1번부터 9번까지로 들어감.(하나의 배열)
+//	$('ul li:first-child').hide()  //이렇게 해야 각 h1별 첫번째값들이 사라짐
+//	$('ul li:last-child').hide()   //마지막 값들이 사라짐.
+
+//	$('a[target]').hide()   //다음 사라짐.
+//	$('a[href="http://www.naver.com"]').hide()    //특성들을 쓸때 [] 쓰면됨.
+	
+//	$('input[type=button]').hide()  //버튼1사라짐
+//	$('input:button').hide()	//input 태그는 숨길때 이렇게함.
+//	$(':button').hide() //!!타입!!이 버튼인것 지워줌. 둘다 사라짐.
+//	$('button').hide()  //태그로 인식해서, 버튼2 만 사라짐.
+	$(':button').click(function(){
+//		$('h2').hide() //어떤 버튼을 클릭하던 h2태그를 지워라.  --> 4개 다 지워짐.
+//		$(this).hide()   //클릭을 당한 대상(버튼)이 this. 
+// 		$(this).hide('drop', {direction: 'left'},1000) //해당태그를 일초에 걸쳐서 안보이게 만들어라.
+ 		$(this).hide('drop', {direction: 'left'},'slow') 
+	})  //click이라는 함수가 존재함. click-> do! 
+   
+
+})
+</script>
+
+</head>
+<body>
+
+<h2>button 전</h2>
+<input type="button" value="버튼1">
+<button>버튼2</button>
+
+<h2>button 후</h2>
+
+
+	<h2>a Tag 전</h2>
+	<a href="http://www.naver.com">네이버</a>
+	<a href="http://www.daum.net" target="_blank">다음</a>
+	<h2>a Tag 후</h2>
+
+
+
+		<h1>동물종류</h1>
+	<ul>
+		<li>호랑이</li>
+		<li>늑대</li>
+		<li>코끼리</li>
+		<li>여우</li>
+	</ul>
+	
+	<h1>음식종류</h1>
+	<ul>
+		<li>김밥</li>
+		<li>냉면</li>
+		<li>초밥</li>
+		<li>돈까스</li>
+		<li>카레</li>
+	</ul>
+</body>
+</html>

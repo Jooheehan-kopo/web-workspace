@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 이벤트   버튼 - 사용자 이벤트 발생 .
+	function clickBtn(){
+	setTimeout(function(){
+		alert('5초 지남...')
+	},5000)
+}
+</script>
+</head>
+<body>
+	<input type="button" value ="클릭" onclick="alert('click')">
+	<input type="button" value ="타이머" onclick="clickBtn()"> <!-- setTimeout .. 몇초지나면 클릭하게 만들것. -> 함수만들어 -->
+	
+</body>
+</html>

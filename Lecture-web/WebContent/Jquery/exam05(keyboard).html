@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+
+		//$('input').on({자바스크립트 객체}) 
+		$('input').on({
+			'keydown' : function() {
+				$(this).css('color', 'orange')
+			},
+			'keyup' : function() {
+				$(this).css('color', 'black')
+			},
+			'focus' : function() {
+				$(this).css('border', '2px dotted red')
+				$(this).css('background-color', 'lightgray')
+			},
+			'blur' : function() {
+				//json객체를 인자로 넘길수있음
+				$(this).css({
+					'border': '1px solid black',
+					'background-color': 'white'
+				})
+//				$(this).css('border', '1px solid black') //too small
+//				$(this).css('background-color', 'white')
+			}
+		})
+
+		/*
+		$('input').keydown(function(){  //키를 누르면, 함수 실행
+			$(this).css('color','orange')
+		})
+		
+		$('input').keyup(function(){    //키를 떼면 색이 검정으로 변함.
+			$(this).css('color','black')
+		})
+		//$('input').keypress(function(){    
+		//	$(this).css('color','black')
+		//})
+		
+		$('input').focus(function(){
+			
+			$(this).css('border','2px dotted red')
+			$(this).css('background-color', 'lightgray')  //커서위의 태그는 보더와 배경색을 바꿔눈다는것.
+		
+		})  //마우스의 행동이 인풋테그로 갔다면,
+		
+		$('input').blur(function() {
+			$(this).css('border', '1px solid black')  //?
+			$(this).css('background-color', 'white')
+		})
+		 */
+	})
+</script>
+
+</head>
+<body>
+	이름:
+	<input type="text">
+	<br> 전화번호:
+	<input type="text">
+	<br>
+</body>
+</html>

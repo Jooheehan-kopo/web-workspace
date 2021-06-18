@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function func(num1,num2,num3){
+		alert(`num1: ${num1}, num2: ${num2}, num3: ${num3}`)
+	}
+	function func(num1,num2,num3){
+		
+		if(!num1) num1=0
+		if(!num2) num2=0
+		if(!num3) num3=0 //true : num3에 값이 안들어온것임. 그러면 0으로 뽑아라. (undefined를 치환함)
+		alert(`num1: ${num1}, num2: ${num2}, num3: ${num3}`)
+	}
+	
+	function func(num1,num2,num3) { //논리연산자로 변환
+		num1=num1||0
+		num2=num2||0
+		num3=num3||0
+		
+		alert(`num1: ${num1}, num2: ${num2}, num3: ${num3}`)
+	}
+	
+	function func(num1=0,num2=0,num3=0) { //추가 된 내용임. 매개변수에 값을 대입. 없으면 0 으로 초기화
+				
+		alert(`num1: ${num1}, num2: ${num2}, num3: ${num3}`)
+	}
+	
+	
+	
+	func() // undefined 라고 나오니까, 
+	func(100,200)
+	func(100,200,300)
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	// 리턴 값으로 함수를 넘기는 것이 클로져
+
+	function returnFunction() {
+		return function() {
+			alert('return Function...')
+		}
+	}
+	
+	//	let ret = returnFunction()
+	//	ret()
+	returnFunction()()
+
+	function test(name) {
+		let output = 'Hello' + name + '!!!'
+		return function(){
+			alert(output) // 이 함수의 내용이 끝날때까지 변수값을 유지 시켜줌.
+		}
+	}
+//	f= test('홍길동')
+//	f()
+	test('홍길동')
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- <script src="js/jquery-3.6.0.min.js"></script> //실행하려는 js파일에 따라 스크립트 따로 지정-->
+
+
+
+<!-- <script src="/Lecture-web/Jquery/js/jquery-3.6.0.min.js"></script>  -->
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+	//jquery는 콜백함수 형태를 취함.
+
+//	window.onload = function() {
+//	}
+	//함수를 정의하는 것이였음.아무리 함수가 많아도 그중 마지막만 실행이됨.
+	// doc ready는 안그럼. 또 있어도 둘다 실행이 됨. 순차적이진 않음.
+	//목적 : DOM 구조를 제어하기 위한 것임.
+	
+	
+	$(document).ready(function() {
+		alert("ready..")
+	})
+	$(document).ready(function() {
+		alert("ready2..")
+	})
+	// $() : doc ready의 축약임 
+	$(function() {
+		alert("ready3..")
+	})
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

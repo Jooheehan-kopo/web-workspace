@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//사용자가 입력한 값을 전달할때 ?로 받음. name 으로 구분. 
+		// id =aaa  & pwd=123  & pwdCheck=123  -> 요청한 것을 서버에 전달하고 있는 것.
+		//form tag에서 name 을 써야지만 사용자가 입력한 정보가 날라감!@!!!! 필수로 써야함!!!
+
+</script>
+</head>
+<body>
+ <form action ="exam07.html">
+ 	아이디: <input type = "text" name='id' required ><br> 
+ 	패스워드: <input type = "password" name = "pwd" required><br>
+ 	패스워드 확인: <input type = "password" name="pwdCheck" required><br>
+ 	<input type = "submit" value ="전송">
+ </form>
+</body>
+</html>

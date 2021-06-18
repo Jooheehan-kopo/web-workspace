@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//자바스크립트의 내장 객체 :number, string, array, math, object, date
+	let num =100
+	let num2 = new Number(100)
+	
+	console.log(typeof num=='number')
+	console.log(typeof num2=='number')
+	
+	console.log(num.constructor ==Number)
+	console.log(num2.constructor ==Number)
+</script>
+</head>
+<body>
+
+</body>
+</html>

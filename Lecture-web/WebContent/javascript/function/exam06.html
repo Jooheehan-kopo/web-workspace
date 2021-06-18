@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+/*
+ * 2.코드 실행함수
+ 	eval(string)
+ */
+ 
+ 	let str ='alert("hello");'
+ 		str += 'var number =10;'
+ 		str += 'alert(number);'
+ 		str += 'let array =[10,12.34, "ABC", true];'
+ 		str += 'alert("배열의 원수개수: " +array.length);' //문장구분하는;
+ 	
+ 	eval(str) //str이 가지고 있는 문장들을 수행해달라는 뜻.
+ 	
+ 	number += 100  // 얘가 위의 변수를 사용할 수 있게됨. --유지되고 있음!!
+ 	alert(number)
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//액션이 있어야 이전것 실행안함
+	//name이 같아야함.
+</script>
+</head>
+<body>
+	<form name="inputform">
+		<input type="checkbox" name ="hobby"> 당신의 취미는 무엇입니까?<br> 
+		<input type="checkbox" name ="hobby"> 음악감상<br>
+		<input type="checkbox" name ="hobby"> 영화감상<br> 
+		<input type="checkbox" name ="hobby"> 독서<br> 
+		<input type="checkbox" name ="hobby"> 게임<br> 
+		<input type="checkbox" name ="hobby"> 여행<br>
+
+	</form>
+
+</body>
+</html>

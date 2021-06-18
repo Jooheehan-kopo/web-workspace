@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: relative;
+	text-align: center;
+	float:left;
+}
+
+
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#mon').mouseenter(function(){
+			$('#mon').animate({
+				height:'200px'
+			},1000)
+			
+		})
+	})
+</script>
+
+</head>
+<body>
+	<div id = "mon" style="background-color:red;">월</div>
+	<div id = "tue" style="background-color:blue;">화</div>
+	<div id = "wed">수</div>
+	<div id = "thrs">목</div>
+	<div id = "fri">금</div>
+	<div id = "sat">토</div>
+	<div id = "sun">일</div>
+</body>
+</html>

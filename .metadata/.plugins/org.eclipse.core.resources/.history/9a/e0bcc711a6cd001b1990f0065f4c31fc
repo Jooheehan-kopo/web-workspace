@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script >
+	window.onload =function(){    //바디 안의 값을 가져오기위해  -> doc 객체에 있음.,.
+		let id = document.getElementById('id')    //어떤 요소를 찾고 싶다.id에 의해서 --> 유니크한 값. 온리원 
+		console.log(id)
+	}
+
+</script>
+</head>
+<body>
+	<table style ="width:100; height:100;"
+	 border="1">
+		<tr>
+			<td id="id">ID</td>    
+		</tr>
+		<tr>
+			<td>PASSWORD</td>
+		</tr>
+	</table>
+</body>
+</html>

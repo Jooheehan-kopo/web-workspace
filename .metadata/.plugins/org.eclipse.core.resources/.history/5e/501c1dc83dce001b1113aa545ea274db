@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	window.onload = function(){
+		
+		//표준이벤트 모델 DOM level 2 : addEventListener() , removeEventListener()   // 이벤트 추가, 삭제
+		let btn01 =document.getElementById("btn01")
+	}
+
+</script>
+</head>
+<body>
+
+<button id ="btn01">click</button>
+<button id ="btn02">click</button>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<style>
+h1 {
+	display: none;
+}
+</style>
+<script>
+	$(document).ready(function() {
+
+		/*
+		//3초동안 첫번째문장이 화면에 보여지고, 'complete' 내용의 경고창 보여주고싶음
+		//		$('h1').slideDown(3000)
+		//		alert("complete")   //이게먼저 보여짐.
+
+		$('h1').slideDown(3000, function(){   //3초 동안의 작업이 끝나고나면, 그 뒤의 함수를 호출하라는 것.
+			alert("complete..")       ///웨안돼0!
+		})
+		 */
+		//		$('h1').slideDown(3000) 
+		//		alert("complete")   //이게먼저 보여짐.
+		
+		
+		
+   
+			/* 3초에 걸쳐 첫번째문장을 화면에 보여준 후, 글자색을 파란색으로 변경한 후
+			슬라이드 효과로 문장을 올라갔다 내려갔다 수행 한 후 배경색을 노란색으로 변경 */
+			
+			
+			//함수 체이닝 : 한번에 써줄수있음..
+			$('h1').fadeIn(3000, function() {
+				$(this).css('color', 'blue').slideUp(2000).slideDown(2000, function() {
+					$(this).css('background-color', 'yellow')
+				})		
+			//방법 1	
+	 		/* $('h1').slideDown(3000, function() {
+				$(this).css('color','red')
+				$(this).slideUp(2000)
+				$(this).slideDown(2000,function(){
+					$(this).css('background-color','yellow')
+				})*/
+			}) 
+
+	})
+</script>
+</head>
+<body>
+	<h1>첫번째문장</h1>
+</body>
+</html>

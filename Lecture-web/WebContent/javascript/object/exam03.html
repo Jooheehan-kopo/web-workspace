@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	//이름 전화번호 주소만 달라짐.
+	
+	function makePerson(name, phone, addr){
+		let person = {
+				'name': name,
+				'phone': phone,
+				'addr': addr,
+				'info': function(){
+					let msg= ''
+					for (let key in this){
+						if(key !='info')
+						msg += key + ':' +this[key] +'\n'
+					}
+					alert(msg)
+				}
+		}
+		
+		return person
+	}
+	//let p = makePerson('홍길동','010-2222-3333','경기도 광명시')
+	//p.info()
+
+	let persons =[]
+	persons.push(makePerson('홍길동','010-2222-3333','경기도 광명시'))
+	persons.push(makePerson('홍길순','010-3333-4444','서울시'))
+	
+	for(let p of persons){ //of --> 각각의 객체에 쓰임
+		p.info()
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	/*
+	 * 자바스크립트 내장 함수
+	 1. 타이머 
+	 setTimeout(function,ms-시간))  : 일정한 시간이 지나고나면 함수를 호출하게 만들어줌.
+	 setInterval(function,ms) : 일정시간마다 함수를 실행하게함. 
+	 clearInterval(id) : 인터벌을 그만두게 하기 위해, 인터벌 작업 아이디가 들어감. 
+	
+	 */
+//	setTimeout(alert('일어나!!!!'), 3000) //1초가 지나면 나오게함.
+
+//	setTimeout(function() {
+//		alert('3초 지났어~ 일어나!!!')
+//	}, 3000)
+	
+	
+//	setInterval(function(){
+//		document.write('현재시간: '+ new Date()+'<br>')
+//	},1000)
+	
+//3초지나면 1초씩 세던거 멈춰라
+
+setTimeout(function() {
+		clearInterval(pid)
+	}, 3000)
+	
+var pid =	setInterval(function(){
+		document.write('현재시간: '+ new Date()+'<br>')
+	},1000)
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

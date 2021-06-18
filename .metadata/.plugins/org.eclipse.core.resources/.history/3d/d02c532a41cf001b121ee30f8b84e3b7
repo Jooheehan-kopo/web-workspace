@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+#mon {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+}
+#tue {
+	width: 200px;
+	height: 100px;
+	background-color: orange;
+	position: absolute;
+}
+#wed {
+	width: 300px;
+	height: 100px;
+	background-color: yellow;
+	position: absolute;
+}
+#thrs {
+	width: 400px;
+	height: 100px;
+	background-color: green;
+	position: absolute;
+}
+#fri {
+	width: 500px;
+	height: 100px;
+	background-color: blue;
+	position: absolute;
+}
+#sat {
+	width: 600px;
+	height: 100px;
+	background-color: lightblue;
+	position: absolute;
+}
+#sun {
+	width: 700px;
+	height: 100px;
+	background-color: purple;
+	position: absolute;
+}
+
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+	})
+</script>
+
+</head>
+<body>
+	<div id = "mon">월</div>
+	<div id = "tue">화</div>
+	<div id = "wed">수</div>
+	<div id = "thrs">목</div>
+	<div id = "fri">금</div>
+	<div id = "sat">토</div>
+	<div id = "sun">일</div>
+</body>
+</html>

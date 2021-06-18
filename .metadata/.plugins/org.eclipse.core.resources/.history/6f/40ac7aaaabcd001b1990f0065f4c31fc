@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 동적
+
+	window.onload =function(){
+	document.write('<h1>hello</h2>')
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	//1.알림창으로 text, html 차이
+	//2.이름입력후 버튼 누르면 데이터 처리
+	//3.
+	$(document).ready(function() {
+
+		/*
+		let pTags = document.getElementsByTagName("p")
+		alert('inner HTML: '+ pTags[0].innerHTML)
+		alert('inner TEXT: '+ pTags[0].innerText)
+		 */
+
+		let html = $("p").html() //하나만 처리
+		let text = $('p').text() //두개다 나옴. 차이가 있음.
+		alert('추출된 HTML: ' + html)
+		alert('추출된 Text: ' + text)
+
+		$('button').click(function() {
+//			let inputTag = document.getElementById("name")
+//			let name = inputTag.value
+
+			let name = $('#name').val()  //안의 내용 출력
+			alert('입력된 이름 : ' + name)
+			
+		})
+		
+		let addr = $('a').attr('href') //href의 속성값을 뽑아줌
+		alert("추출된 주소: "+ addr)
+	})
+</script>
+
+</head>
+<body>
+	<p>
+		내이름은 <strong>홍길동</strong>이고, 별명은 <em>의적</em>입니다.
+	</p>
+	<p>
+		내이름은 <strong>홍길순</strong>이고, 별명은 <em>의적2</em>입니다.
+	</p>
+	이름:
+	<input type="text" id="name">
+	<button>입력완료</button>
+	<a href ="http://www.naver.com">네이버</a>
+</body>
+</html>

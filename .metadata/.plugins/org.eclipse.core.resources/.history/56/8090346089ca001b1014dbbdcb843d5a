@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body {
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h2 {
+	text-align: center;
+}
+
+table, th, td {
+	border: 3px;
+	border-style: ridge;
+	text-align:center;
+}
+
+
+table {
+	width: 100%;
+	
+}
+
+.th01 {
+	width: 15%;
+	
+}
+
+.th02 {
+	width: 55%;
+	
+}
+
+.th03 {
+	width: 15%;
+}
+
+.th04 {
+	width: 15%;
+}
+
+.th {
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+#tt{
+ text-align:left;
+}
+</style>
+
+</head>
+<body>
+	<hr>
+	<h2>게시판 목록</h2>
+	<hr>
+	<table>
+		<tr>
+			<th class="th01">번호</th>
+			<th class="th02">제목</th>
+			<th class="th03">글쓴이</th>
+			<th class="th04">등록일</th>
+		</tr>
+
+		<tr>
+			<td>46</td>
+			<td id="tt"><a href="detailBoard.html">동적인 글 </a></td>
+			<td>테스터</td>
+			<td>2012-11-07</td>
+		</tr>
+
+		<tr>
+			<td>45</td>
+			<td id="tt"><a href="detailBoard.html">자바제목 </a></td>
+			<td>JDBC</td>
+			<td>2012-11-07</td>
+		</tr>
+
+		<tr>
+			<td>44</td>
+			<td id="tt"><a href="detailBoard.html">자바제목 </a></td>
+			<td>JDBC</td>
+			<td>2012-11-07</td>
+		</tr>
+
+		<tr>
+			<td>43</td>
+			<td id="tt"><a href="detailBoard.html">자바제목 </a></td>
+			<td>JDBC</td>
+			<td>2012-11-07</td>
+		</tr>
+
+	</table>
+
+
+</body>
+</html>

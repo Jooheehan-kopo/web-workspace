@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//상속
+	function Person(name, phone, addr) {
+		this.name = name
+		this.phone = phone
+		this.addr = addr
+	}
+
+	Person.prototype.hobby = '영화감상'
+	Person.prototype.info = function() {
+		let msg = ''
+		for ( let key in this) {//내객체안의 모든 키를 보고 추출
+			if (key != 'info')
+				msg += key + ':' + this[key] + '\n'
+		}
+
+		alert(msg)
+	}
+	
+	function Doctor(name, phone, addr, major){
+		//this.super =Person
+		//this.super(name,phone,addr)
+		//Person.call(this, name,phone, addr)
+		Person.call(this, ...arguments)
+		this.major=major
+	}
+	
+	/*let p = new Person("홍길동", '010-2200-4444', '경기도')
+	p.info()
+	console.log(p)*/
+	
+	let d= new Doctor('나최고','010-2222-3333','서울시 서초구','신경외과')
+	
+	console.log(d)
+	console.log(d instanceof Person) // 일부분이야?
+	console.log( d instanceof Doctor) // true  --> 같은 내용을 가지고 있다고 해서 상속관계인것은 아님.
+			
+	
+</script>
+
+
+</head>
+<body>
+
+</body>
+</html>

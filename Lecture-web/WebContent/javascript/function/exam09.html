@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//전계 연산자
+	
+	function func01(){
+		alert(arguments[0]+ ':'+ arguments[1]+':'+arguments[2])
+	}
+	
+	function func02(...numbers){  //123 나온 값을 numbers가 받아옴.
+		console.log(numbers)
+		alert(numbers[0]+':'+ numbers[1]+':' + numbers[2])
+	}
+	
+	function func03(a,b,...numbers){ //뒤에 값이 여러개 들어올때. 값 다가져옴
+		alert(`a:${a},b:${b}, number: ${numbers}`)	
+	}
+//	func01(1,2,3)
+
+//	func02(1,2,3)
+//	func02(1)
+//	func03(10,20,30,40,50,60)
+	 
+	let array= [10,20,30] //배열도 각하나의 요소로 인정. 그래서 첫번째 자리에 다들어감.
+	func01(array)
+	func01.apply(null,array) //매개변수에 배열이 가지고 있는 요소를 분리시켜 하나씩 넣어줌. -ECMS 5 ver.까지
+	//func01(array[0],array[1],array[2])
+	func01(...array) // 하나씩 분리시켜 넣어줘~
+	
+ 	func03(1,2,...array)  // = fun03(1,2,10,20,30)
+ 	func03(...array,...array)
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

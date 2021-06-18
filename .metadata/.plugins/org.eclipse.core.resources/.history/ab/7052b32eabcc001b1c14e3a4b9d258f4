@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	testFunction()  // 호이스팅 일어나고 있음. 밑의 선언된 것 위에서 불러올 수 있음.
+	function testFunction(){
+		alert("test fuction 호출..")
+	}
+	
+	function testFunction01(data){
+		alert('data: '+data)
+	}
+	testFunction01(123)
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

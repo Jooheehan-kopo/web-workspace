@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	let person ={
+			//객체하나 만듬
+			'name': '홍길동',
+			'phone': '010-1111-2222'
+			//key(문자형 형태 - '' 생략해도 됨. value 로 인식함	
+	}
+	console.log(person)
+	alert('name: '+person.name+ 'phone: '+person.phone)
+	alert('name: '+person['name']) //'' 꼭 붙여야함. [] 안에!@@
+	
+	alert('멤버변수 name 존재여부: ' + ('name' in person))  // 존재여부 in 으로 확인가능.
+	alert('멤버변수 phone 존재여부: ' + ('phone' in person))
+	alert('멤버변수 addr 존재여부: ' + ('addr' in person))
+	
+	//동적으로 객체를 추가할 수 있음.
+	person.addr='경기도 광명시'
+	alert('멤버변수 addr 존재여부: ' + ('addr' in person))
+	console.log(person)
+	
+	//객체 삭제
+	delete(person.addr)
+	alert('멤버변수 addr 존재여부: ' + ('addr' in person))
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

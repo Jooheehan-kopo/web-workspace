@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+/*  화살표 함수 arrow 함수
+	function(){}  ------>  ()=>[]
+ * 
+ 	람다 함수
+ 	
+ 	ecm script 6ver때 추가가 된 것임.
+ */
+ 
+ 	let multiply = function(a,b){
+		return a*b
+	}
+	
+	//아래 처럼 쓰는 것임. 위의 것이. 
+	let multiply = (a,b) => {return a*b}  //let은 const 로 바뀔 수 있음
+	const multiply =(a,b)=> a*b  //return 없이도 쓸 수 있음.
+	
+	alert(multiply(10,20))
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

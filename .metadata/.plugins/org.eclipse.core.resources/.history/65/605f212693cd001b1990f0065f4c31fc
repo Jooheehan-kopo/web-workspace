@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+// 출력하는 방법 3가지.  index, in, of
+//추가된 버전
+
+	 let books=['백설공주','피터펜','콩쥐팥쥐', '신데렐라']
+	 
+	 for (let index =0; index<books.length;index++){
+		 document.write(books[index]+ "&nbsp;&nbsp;&nbsp;")
+	 }
+	document.write('<br>')
+	
+	for(let i in books){
+		document.write(books[i]+"&nbsp;&nbsp;&nbsp;" )
+	}
+	document.write('<br>')
+
+	for (let book of books){
+		document.write(book+"&nbsp;&nbsp;&nbsp;")
+	}
+	document.write('<br>')
+	//위치는 모름. 몇번재인지 알수 없음
+	
+	books.sort()
+	
+	
+	books.forEach(function(element ,index,array){
+//		alert('!') //인덱스 개수만큼 돌아.
+	document.write(element+"&nbsp;&nbsp;&nbsp;")	
+		
+	})
+	document.write('<br>')
+	//이름. 위치, 배역이 날라감.
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

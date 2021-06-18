@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	//생성자 함수
+
+	function Person(name, phone, addr) {
+		this.name = name
+		this.phone = phone
+		this.addr = addr
+		this.info = function() {
+			let msg = ''
+			for ( let key in this) {
+				if (key != 'info')
+					msg += key + ':' + this[key] + '\n'
+			}
+			alert(msg)
+		}
+	}
+	let person = new Person('홍길동', '010-2222-2222', '경기도 광명시')
+	person.info();
+	console.log(person)
+
+	let person2 = new Person()
+	console.log(person2)
+
+	alert(person instanceof Person) // 객체인지 확인..? person 인지 여부에 따라 t.f
+
+	Person.prototype.aaa = function() {
+		alert('aaa')
+	}
+	person.aaa()
+	person2.aaa()
+</script>
+</head>
+<body>
+
+</body>
+</html>

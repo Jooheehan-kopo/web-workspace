@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+//사용자가 입력한 값을 전달할때 ?로 받음. name 으로 구분. 
+		// id =aaa  & pwd=123  & pwdCheck=123  -> 요청한 것을 서버에 전달하고 있는 것.
+		//form tag에서 name 을 써야지만 사용자가 입력한 정보가 날라감!@!!!! 필수로 써야함!!!
+		//required 대신에 스크립트에서 쓸것임. -- 올바르게 임력햇을때.
+		//onsubmit  = "return true" : 버튼을 눌럿을때. - 사용자가 입력한정보가 날라가는 것 : return, 액션이 가리키는 유얼엘로 요청을 하라는 것임.
+	 	// "return false = 안날라감." 
+	 	//"return whenSubmit()"   함수로 받음.
+	 	// 1. 아이디 패스 입력여부   / get, id.value(입력된값 ㄱ져오기)
+	 	//  form tag만 name을 이용해서 가능. -> name r값 지정. : document.inputForm.id.value -> 입력받은 값 알수있음.
+	 	
+	 	function whenSubmit(){
+		
+			//let id = document.getElementById("id")
+			//let pwd = document.getElementById('pwd')  --> 복잡. form tag는 조금 다름. 
+			//if (id.value==""){
+			//	alert("아이디를 입력하세요")
+			//	return false 
+			//}
+			
+			let f = document.inputForm
+			if(f.id.value ==""){        //id의 벨류(입력받은 값이 없으면 )
+				alert("아이디를 입력하세요")  //알림창 띄움.
+				return false
+			}
+			return false
+			//return true
+		}
+	 	
+</script>
+</head>
+<body>
+ <form action ="exam07.html" name="inputForm" onsubmit = "return whenSubmit()">
+ 	아이디: <input type = "text" name='id' ><br> 
+ 	패스워드: <input type = "password" name = "pwd"><br>
+ 	패스워드 확인: <input type = "password" name="pwdCheck"><br>
+ 	<input type = "submit" value ="전송">
+ </form>
+</body>
+</html>

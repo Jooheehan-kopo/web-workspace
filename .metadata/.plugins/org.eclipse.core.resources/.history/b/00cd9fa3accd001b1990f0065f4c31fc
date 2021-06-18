@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 동적  , <> 따로 이름 따로 만들기
+
+	window.onload =function(){
+	let h1Tag =document.createElement('h1')
+	let text =document.createTextNode('hello')
+	h1Tag.appendChild(text)    //h1tag에 붙이기
+	console.log(h1Tag)  //<h1></h1> 만들어짐
+//	console.log(text)  //<h1></h1> 만들어짐
+	document.body.appendChild(h1Tag)  //body밑에 자식으로 들어옴
+	
+	let imgTag = document.createElement('img')  //속성 설정 필요
+	imgTag.setAttribute('src',<img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">)
+	console.log(imgTag)
+	
+}
+</script>
+</head>
+<body>
+	<!--<img src="https://t1.daumcdn.net/daumtop_chanel/op/20200723055344399.png">  -->
+</body>
+</html>

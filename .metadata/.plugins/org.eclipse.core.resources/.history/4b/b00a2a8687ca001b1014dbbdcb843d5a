@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+
+td{
+border-style: ridge;
+}
+
+
+.tb{
+font-weight: bold;
+
+}
+</style>
+
+</head>
+<body>
+	<hr>
+	<h2>게시판 목록</h2>
+	<hr>
+	<table>
+		<tr>
+			<td class="tb">번호</td>
+			<td>46</td>
+		</tr>
+		<tr>
+			<td class="tb">제목</td>
+			<td>동적인 글</td>
+		</tr>
+		<tr>
+			<td class="tb">글쓴이</td>
+			<td >테스터</td>
+		</tr>
+		<tr>
+			<td class="tb">내용</td>
+			<td>잘 되겠지</td>
+		</tr>
+		<tr>
+			<td class="tb">등록일시</td>
+			<td>2012-11-07</td>
+		</tr>
+	</table>
+</body>
+</html>

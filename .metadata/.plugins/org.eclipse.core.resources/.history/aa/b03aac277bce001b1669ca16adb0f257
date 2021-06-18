@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div id ="map">
+<img src ="https://img.japankuru.com/prg_img/img/img2021031714182038076500.png">
+<button class="btn01" type="button" onclick ="javascript:sensorBtnClick('btn01');"><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgMBWQb-r_WTvvFlHrgMg_eTouwkjcJhem5g&usqp=CAU">
+</button>
+
+</div>
+</body>
+</html>

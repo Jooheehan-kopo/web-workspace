@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+let array = [1,2,3,4,5]
+let array2 = array
+
+console.log('array :' + array)
+console.log('array2 :' + array)
+
+array2[0]=100
+console.log('array :' + array)
+console.log('array2 :' + array)
+
+
+
+
+//깊은 복사
+let array=[]  //  배열을 만들어서 그 안에 넣어줌.
+for (let i in array){
+	array2[i]=array[i]
+}
+console.log('array :' + array)
+console.log('array2 :' + array)
+
+array2[0]=100
+console.log('array :' + array)
+console.log('array2 :' + array)
+
+//깊은복사 2
+
+let array2 =[...array] //전개연산자로 
+</script>
+</head>
+<body>
+
+</body>
+</html>

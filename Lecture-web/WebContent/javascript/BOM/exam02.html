@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+if(confirm('네이버로 이동하시겠습니까?')) //확인과 취소버튼가지고 있는 창
+{
+	location.href ="http://www.naver.com" //가장 일반적인 방법
+	//location ="http://www.naver.com"
+	//location.assign('http://www.naver.com')
+	//location.replace('http://www.naver.com') 뒤로가기 안됨
+	history.go(-1) //뒤로가라
+	history.go() //앞으로 가라
+	}
+</script>
+</head>
+<body>
+ 
+</body>
+</html>

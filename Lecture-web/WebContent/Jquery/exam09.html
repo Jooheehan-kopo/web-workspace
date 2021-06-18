@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+div {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(document).ready(function() {
+		$('div').animate({
+			width : '200px'
+		})
+		$('div').animate({
+			left : '100px',
+			opacity : '0.3'
+		}, 2000) //옆으로뽑고
+
+		$('div').animate({
+			width : '100px',
+			height : '200px',
+			opacity : '0.7' //아래로 뽑고
+		}, 3000)
+
+		$('div').animate({ //자체에서 색을 바꾸게하는 것은 할 수 없음!!
+			height : '100px',
+			left : '0px',
+			top : '100px',
+			opacity : '1',
+			backgroundColor: 'blue'
+		//			'background-color' : 'blue'  //안됨!
+		
+	})
+
+	/*
+	
+	$('div').animate({      //자체에서 색을 바꾸게하는 것은 할 수 없음!!
+	height:'100px',
+	left:'0px',
+	top:'100px',
+	opacity:'1'  ,
+	//			'background-color' : 'blue'  //안됨!
+	}, function(){
+	$(this).css('background-color','blue')  //다 진행하고나서 바뀜. -->jquery 를 사용!
+	})
+	 */
+
+	/*
+	$('div').animate({
+	'width':'+=200px',
+	'height' : '200px',
+	left:'100px',  //static은 안바뀜. 위치를  absolute 로
+	top: '50px', //아래로
+	opacity:'0.6'  //투명도
+	},2000) //변형에대한 소요시간,
+	
+	 */
+})
+</script>
+
+</head>
+<body>
+	<div></div>
+</body>
+</html>

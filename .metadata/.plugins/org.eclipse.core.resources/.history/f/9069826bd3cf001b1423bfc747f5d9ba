@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+	})
+</script>
+</head>
+<body>
+		<img src="/Lecture-web/css/img/cat.jpg">
+	<img src="/Lecture-web/css/img/simpson.gif">
+	<img src="/Lecture-web/css/img/panda.jpg">
+	<img src="/Lecture-web/css/img/toby.gif">
+</body>
+</html>

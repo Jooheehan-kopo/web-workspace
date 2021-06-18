@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+// 동적  , <> 따로 이름 따로 만들기
+
+	window.onload =function(){
+	let h1Tag =document.createElement('h1')
+	console.log(h1Tag)
+	
+}
+</script>
+</head>
+<body>
+	
+</body>
+</html>

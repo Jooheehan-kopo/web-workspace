@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		border: 1px solid red
+	}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function() {
+		
+		$('button').click(function() {
+			//let pTags = document.getElementsByTagName("p")
+			///for(let pTag of pTags) {
+				//console.log(pTag) //p태그 선택됨.
+//				$('p').remove()// div 포함해서 지웜
+//				$('p').empty() //나는 빼고 나머지만 지워.
+				
+//				$('p.c01').remove()  아래와 같음. 한길동만 사라짐
+				//	$('p#id02').remove()
+				$('p').remove('.c01, #id02')   //p태그중 속성들만 달라지는 것. remove뒤에 인자로 쓸 수 있음.
+				
+		})
+		
+	})
+</script>
+</head>
+<body>
+	<div>
+		<p id="id01">나는 홍길동이다</p>
+		<mark class="c01">나는 김길동이다</mark><br>
+		나는 고길동이다<br>
+		<p class="c01">나는 한길동이다</p>
+	</div>
+	<p id="id02">나는 박길동이다</p>
+	<button>삭제</button>
+</body>
+</html>
