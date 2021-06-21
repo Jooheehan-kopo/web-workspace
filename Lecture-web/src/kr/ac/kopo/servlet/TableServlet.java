@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 //http://localhost:9999/lecture-web/servlet/table?row=4&col=3 요청시
 
-@WebServlet("/servlet/tableExam") //가상의 url 생성?
+@WebServlet("/servlet/tableExam") //가상의 url 생성? --> 내가 url 지정해줌. 이렇게 쳐도 나오게 됨. 겹치면 안됨. 하나의 서블릿에 여러 url 가능. 가상의 url과 같으면 에러남.
 public class TableServlet extends HttpServlet {
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,8 +26,7 @@ public class TableServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter(); // 아웃풋장치를 얻어옴.PrintWriter가 리턴타입임.
 		
-//		StringBuilder sb = new StringBuilder();
-//		sb.append("<html>");
+
 		
 		for(int i=1; i<row; i++) {
 		out.println("<tr>");
