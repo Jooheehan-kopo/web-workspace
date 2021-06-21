@@ -46,19 +46,19 @@
 			<td><%=rs.getInt("no") %></td>
 			</tr>
 			<tr> <th width ="25%"> 제목</th>
-			<td><%= rs. getString("title") %></td>
+			<td><%= rs.getString("title") %></td>
 			</tr>
 			<tr> <th width ="25%"> 작성자</th>
-			<td><%= rs. getString("writer") %></td>
+			<td><%= rs.getString("writer") %></td>
 			</tr>
 			<tr> <th width ="25%"> 내용</th>
-			<td><%= rs. getString("content") %></td>
+			<td><%= rs.getString("content") %></td>
 			</tr>
 			<tr> <th width ="25%"> 조회수</th>
-			<td><%= rs. getInt("view_cnt") %></td>
+			<td><%= rs.getInt("view_cnt") %></td>
 			</tr>
 			<tr> <th width ="25%"> 등록일</th>
-			<td><%= rs. getString("reg_date") %></td>
+			<td><%= rs.getString("reg_date") %></td>
 			</tr>
 		
 		</table>

@@ -37,6 +37,16 @@
 		<servlet-name>table</servlet-name>
 		<url-pattern>/servlet/table</url-pattern>
 	</servlet-mapping>
+	
+	
+		<servlet>
+		<servlet-name>pinfo</servlet-name>
+		<servlet-class>kr.ac.kopo.servlet.PInfoInput</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>pinfo</servlet-name>
+		<url-pattern>/pinfo</url-pattern>
+	</servlet-mapping>
 
 
 
