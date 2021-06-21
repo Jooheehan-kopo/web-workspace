@@ -1,0 +1,46 @@
+package kr.ac.kopo.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+//http://localhost:9999/lecture-web/servlet/table?row=4&col=3 요청시
+
+
+public class TableServlet {
+	
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String method = request.getMethod(); 
+		StringBuffer url = request.getRequestURL();
+		
+		response.setContentType("text/html; charset=utf-8");
+		
+		PrintWriter out = response.getWriter(); // 아웃풋장치를 얻어옴.PrintWriter가 리턴타입임.
+		out.println("<html>");
+		out.println("	<head>");
+		out.println("		<title> 메소드 호출방식</title>");
+		out.println("	</head>");
+		out.println("	<body>");
+		out.println("<table>");
+		out.println("<th> </th>");
+		out.println("<tr>");
+		out.println("<td>");
+		out.println("</td>");
+		out.println(" </tr>");
+		out.println("====================================================<br>");
+		out.println("파라미터(id) : " + id + "<br>");
+		out.println("요청방식 : " + method + "<br>");
+		out.println("요청uri : " + uri + "<br>");
+		out.println("====================================================<br>");
+		out.println("	</body>");
+		out.println("<html>");
+
+		out.flush();
+		out.close(); // 접속을 해제
+	}
+	
+	
+}

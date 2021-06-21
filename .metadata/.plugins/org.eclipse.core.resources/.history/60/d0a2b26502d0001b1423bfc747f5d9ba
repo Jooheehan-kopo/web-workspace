@@ -1,0 +1,44 @@
+package kr.ac.kopo.servlet;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MethodServlet extends HttpServlet {
+	//	http://localhost:9999/Lecture-web/method?id=angki_95
+	
+	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
+		//System.out.println("doGet()호출,,,");
+		
+	//서버에게 요청	
+		String method = request.getMethod(); // get방식인지, post 인지. 알려줌.
+//		System.out.println("method: "+ method);
+		
+		StringBuffer url = request.getRequestURL();   //String 하면 속도 느려짐. 다 + 라서.
+//		System.out.println("url: "+ url.toString());  //주소 다보며줌
+		
+		String uri = request.getRequestURI();    // 뒤의 값만 보여줌.
+//		System.out.println("uri: " + uri);
+		
+		String id = request.getParameter("id");   //입력받은 id 를 가져오려고 할때 ,리덭값 무조건 스트링
+//		System.out.println("id: "+ id);
+		
+		
+	//클라이언트에게 응답. -> io : outputStream, writer. 가 필요함.
+		PrintWriter out = response.getWriter(); //아웃풋장치를 얻어옴.PrintWriter가 리턴타입임.
+		out.println("<html>");
+		out.println("	<head>");
+		out.println("		<title> 메소드 호출방식</title>");
+		out.println("	</head>");
+		out.println("	<body>");
+		out.println("	</body>");
+		out.println("<html>");
+		
+		
+	}
+
+}

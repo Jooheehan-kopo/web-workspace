@@ -1,0 +1,21 @@
+package kr.ac.kopo.servlet;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class MethodServlet extends HttpServlet {
+	
+	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
+		//System.out.println("doGet()호출,,,");
+		
+		StringBuffer url = request.getRequestURL();   //String 하면 속도 느려짐. 다 + 라서.
+		System.out.println("url: "+ url.toString());
+		String uri = request.getRequestURI();
+		System.out.println("uri: " + uri);
+	}
+
+}

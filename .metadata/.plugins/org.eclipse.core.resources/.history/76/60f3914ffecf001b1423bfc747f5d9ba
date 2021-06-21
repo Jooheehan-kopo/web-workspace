@@ -1,0 +1,10 @@
+package kr.ac.kopo.servlet;
+
+import javax.servlet.http.HttpServlet;
+
+public class MethodServlet extends HttpServlet{
+	public void doGet()(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+		
+	}
+
+}
