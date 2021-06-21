@@ -7,8 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<hr>
-<h2>게시판목록</h2>
-<hr>
+
 </body>
 </html>
