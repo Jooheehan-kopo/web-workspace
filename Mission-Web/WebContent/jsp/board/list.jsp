@@ -51,7 +51,7 @@ ResultSet rs = pstmt.executeQuery();
 			%>
 			<tr>
 				<td><%=no%></td>
-				<td><a href="detail.jsp?no=<%=no%>"><%=title%></a></td>
+				<td><a href="detail(el).jsp?no=<%=no%>"><%=title%></a></td>
 				<td><%=rs.getString("writer")%></td>
 				<td><%=rs.getString("reg_date")%></td>
 			</tr>

@@ -21,6 +21,13 @@ ResultSet rs = pstmt.executeQuery();
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="/Mission-Web/resources/js/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#addmem').click(function() {
+			location.href = "signin.jsp"
+		})
+	})
+</script>
 
 </head>
 <body>
@@ -57,7 +64,7 @@ ResultSet rs = pstmt.executeQuery();
 						
 		</table>
 		<br>
-		<button id="addmem"> 회원등록 </button>
+		<button id="addmem">회원등록</button>
 	
 	</div>
 </body>

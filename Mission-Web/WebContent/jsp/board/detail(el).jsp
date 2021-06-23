@@ -1,3 +1,5 @@
+<%@page import="kr.ac.kopo.util.JDBCClose"%>
+<%@page import="kr.ac.kopo.board.vo.BoardVO"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.PreparedStatement"%>
 <%@page import="kr.ac.kopo.util.ConnectionFactory"%>
@@ -25,7 +27,25 @@
 	ResultSet rs = pstmt.executeQuery();  //클릭으로 가면 최소 한개행...?
 			
 	rs.next(); // 내가 추출한 행을 가리킴   
+	int no = rs.getInt("no");
+	String title = rs.getString("title");
+	String writer = rs.getString("writer");
+	String content = rs.getString("content");
+	int viewCnt = rs.getInt("view_cnt");
+	String regDate = rs.getString("reg_date");
 	
+//	pageContext.setAttribute("no", no); //no 라는 이름으로 no값 지정
+//	pageContext.setAttribute("title",title);
+//	pageContext.setAttribute("writer",writer);
+//	pageContext.setAttribute("content",content);
+//	pageContext.setAttribute("viewCnt",viewCnt);
+//	pageContext.setAttribute("regDate",regDate);
+
+JDBCClose.close(conn,pstmt);  
+
+BoardVO board = new BoardVO(no,title,writer,content,viewCnt,regDate);
+
+pageContext.setAttribute("board",board);
 	
 	%>
 <!DOCTYPE html>
@@ -43,22 +63,22 @@
 		<br>
 		<table border ="1">
 			<tr> <th width ="25%"> 번호</th>
-			<td><%=rs.getInt("no") %></td>
+			<td>${ board.no }</td>
 			</tr>
 			<tr> <th width ="25%"> 제목</th>
-			<td><%= rs.getString("title") %></td>
+			<td>${board.title } </td>
 			</tr>
 			<tr> <th width ="25%"> 작성자</th>
-			<td><%= rs.getString("writer") %></td>
+			<td>${board.writer }</td>
 			</tr>
 			<tr> <th width ="25%"> 내용</th>
-			<td><%= rs.getString("content") %></td>
+			<td>${board.content }</td>
 			</tr>
 			<tr> <th width ="25%"> 조회수</th>
-			<td><%= rs.getInt("view_cnt") %></td>
+			<td>${board.viewCnt }</td>
 			</tr>
 			<tr> <th width ="25%"> 등록일</th>
-			<td><%= rs.getString("reg_date") %></td>
+			<td>${board.regDate }</td>
 			</tr>
 		
 		</table>

@@ -21,14 +21,17 @@
 		let t = document.inputForm
 		if (t.title.value == "") {
 			alert("제목을 입력하세요!")
+			t.title.focus()
 			return false
 		}
 		if (t.writer.value == "") {
 			alert("작성자를 입력하세요!")
+			t.writer.focus()
 			return false
 		}
 		if (t.content.value == "") {
 			alert("내용을 입력하세요!")
+			t.content.focus()
 			return false
 		}
 		return true
