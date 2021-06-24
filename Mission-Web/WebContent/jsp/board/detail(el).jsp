@@ -6,6 +6,8 @@
 <%@page import="java.sql.Connection"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%-- http://localhost:9999/Mission-Web/jsp/board/detail.jsp?no=2 
 	1. 파라미터에서 조회하고자하는 게시글 번호를 먼저 추출해야함.  request.getParameter
 	2. 추출하려는 게시글 번호를 가지고와서(키보드..?)
@@ -53,9 +55,15 @@ pageContext.setAttribute("board",board);
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel ="stylesheet" href="/Mission-Web/resources/css/layout.css" />
+<link rel ="stylesheet" href="/Mission-Web/resources/css/board.css" />
 </head>
 <body>
-	<div align="center">
+	<header>
+		<jsp:include page ="/jsp/include/topMenu.jsp" />
+	</header>
+	<section>
+		<div align="center">
 		<hr width="80%">
 		<h2>게시판 상세</h2>
 		<hr width="80%">
@@ -66,13 +74,13 @@ pageContext.setAttribute("board",board);
 			<td>${ board.no }</td>
 			</tr>
 			<tr> <th width ="25%"> 제목</th>
-			<td>${board.title } </td>
+			<td> <c:out value = "${board.title }"/> </td>
 			</tr>
 			<tr> <th width ="25%"> 작성자</th>
 			<td>${board.writer }</td>
 			</tr>
 			<tr> <th width ="25%"> 내용</th>
-			<td>${board.content }</td>
+			<td><c:out value ="${board.content }"/></td>
 			</tr>
 			<tr> <th width ="25%"> 조회수</th>
 			<td>${board.viewCnt }</td>
@@ -83,5 +91,15 @@ pageContext.setAttribute("board",board);
 		
 		</table>
 	</div>
+	</section>
+	<footer>
+		<%@ include file="/jsp/include/bottom.jsp" %>
+	</footer>
 </body>
 </html>
+
+
+
+
+
+
