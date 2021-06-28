@@ -51,6 +51,7 @@
  
  
  %>
- <c:if
+ <c:if test = "${param.id}" eq cid>
+
  	  <jsp:forward page ="/index.jsp"/>
  
