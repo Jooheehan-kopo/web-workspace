@@ -3,7 +3,7 @@
 <table border="1" style ="width :100%">
 	<tr>
 
-		<td rowspan="2" >
+		<td rowspan="2" style="height:70px" >
 			<img src="/Mission-Web/resources/img/logo.png" style="height:70px"></td>
 		<td align="right">즐겨찾기</td>
 	</tr>
