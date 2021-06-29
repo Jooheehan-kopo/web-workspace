@@ -8,7 +8,6 @@
 int boardNo = Integer.parseInt(request.getParameter("no")); 
 BoardDAO dao = new BoardDAO();
 
-
 BoardVO board= dao.detail(boardNo);
 pageContext.setAttribute("board",board);
 %>
@@ -73,6 +72,7 @@ pageContext.setAttribute("board",board);
 			onsubmit="return whenSubmit()">
 			
 			<input type ="hidden" name="writer" value="${userVO.id }">
+			<input type ="hidden" name="no" value="${board.no }">
 			<table border="1" width="80%">
 				<tr>
 					<th width="25%">제목</th>

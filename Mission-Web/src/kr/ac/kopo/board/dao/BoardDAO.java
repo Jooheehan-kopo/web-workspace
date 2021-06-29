@@ -104,11 +104,28 @@ public class BoardDAO {
 
 	}
 	
-	public BoardVO update() {
+	
+	public void update(BoardVO board) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("update t_board  ");
 		sql.append("set title = ? , content= ? , reg_date=sysdate  "); 
 		sql.append("  where no = ?  ");	
+		
+		try (Connection conn = new ConnectionFactory().getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());) {
+
+			pstmt.setString(1, board.getTitle());
+			pstmt.setString(2, board.getContent());
+			pstmt.setInt(3, board.getNo());
+
+			pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
+	
+	
 
 }

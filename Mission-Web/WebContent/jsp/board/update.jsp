@@ -17,14 +17,17 @@ request.setCharacterEncoding("utf-8");
 String title = request.getParameter("title");
 String writer = request.getParameter("writer");  //인풋으로 받지 않지만, 세션에 있음. 가져올 수 있음..
 String content = request.getParameter("content");
+int no = Integer.parseInt(request.getParameter("no"));
 
 BoardVO board = new BoardVO();
+
 board.setTitle(title);
 board.setWriter(writer);
 board.setContent(content);
+board.setNo(no);
 
 BoardDAO dao = new BoardDAO();
-dao.insert(board);
+dao.update(board);
 
 %>
 
