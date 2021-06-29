@@ -1,3 +1,4 @@
+<%@page import="kr.ac.kopo.board.dao.BoardDAO"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="kr.ac.kopo.board.vo.BoardVO"%>
@@ -11,51 +12,44 @@
 	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-Connection conn = new ConnectionFactory().getConnection();
-StringBuilder sql = new StringBuilder();
-sql.append("select no,title, writer, to_char(reg_date, 'yyyy-mm-dd')as reg_date");
-sql.append("  from t_board ");
-sql.append("order by no desc");
-
-PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-ResultSet rs = pstmt.executeQuery();
-//rs.nest가 false 가 될때까지
-
-List<BoardVO> list = new ArrayList<>();
-while (rs.next()){
-	int no = rs.getInt("no");
-	String title = rs.getString("title");
-	String writer = rs.getString("writer");
-	String regDate = rs.getString("reg_date");
-	
-	BoardVO board = new BoardVO();
-	board.setNo(no);
-	board.setTitle(title);
-	board.setWriter(writer);
-	board.setRegDate(regDate);
-	
-	list.add(board);
+	BoardDAO dao = new BoardDAO();
+	List<BoardVO>list = dao.selectAll();
 
 	pageContext.setAttribute("list",list);  // 데이터를 ${list[0].no}으로 접근해야하는데, 계속 반복하기 위해서는, foreach 사용
-}
 
-JDBCClose.close(conn, pstmt); //db 끝내주고. 비즈니스 로직 끝내고 출력임.
+
+
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판메인</title>
 <link rel ="stylesheet" href="/Mission-Web/resources/css/layout.css" />
 <link rel ="stylesheet" href="/Mission-Web/resources/css/board.css" />
 <script src="/Mission-Web/resources/js/jquery-3.6.0.min.js"></script>
 <script type="text/javascript">
+
 	$(document).ready(function() {
 		$('#addBtn').click(function() {
 			location.href = "writeForm.jsp"
 		})
 	})
+	function doAction(no){
+		//디테일로 이동하는 것이 목적 /  jstl 해석(서버)이 먼저기때문에 자바스크립트 안에도 쓸수 가 있음.
+		<c:choose>
+			<c:when test ="${not empty userVO}">
+				location.href='detail(el).jsp?no='+no; //로그인이 되어있을때만 가능. 로그인여부 알아야함.
+			</c:when>
+			<c:otherwise>
+				if(confirm('로그인이 필요한 서비스입니다 \n 로그인페이지로 이동하시겠습니까?'))//참이라면
+					location.href = "/Mission-Web/jsp/login/login.jsp"
+			</c:otherwise>
+		</c:choose>
+			
+		
+	}
 </script>
 </head>
 <body>
@@ -80,7 +74,12 @@ JDBCClose.close(conn, pstmt); //db 끝내주고. 비즈니스 로직 끝내고 �
 			<tr <c:if test = "${loop.index mod 2 ne 0 }"> class="odd"</c:if>>
 			 	<td>${board.no }</td>
 			 	<td>
-			 	<a href="detail(el).jsp?no=${board.no}">
+			 	
+			 <%-- 	<a href="detail(el).jsp?no=${board.no}"> --%>
+			 
+			<!--  <a onclick="doAction()"> -->
+			
+			<a href="javascript: doAction(${board.no})" >
 			 	<c:out value = "${board.title }"/>
 			 	</a>
 			 	</td>
@@ -91,7 +90,10 @@ JDBCClose.close(conn, pstmt); //db 끝내주고. 비즈니스 로직 끝내고 �
 			</c:forEach>
 		</table>
 		<br>
-		<button id="addBtn">새글등록</button>
+		
+		<c:if test ="${not empty userVO }">
+		<button id="addBtn">새글등록(로그인시)</button>
+		</c:if>
 	</div>
 	</section>
 	<footer>

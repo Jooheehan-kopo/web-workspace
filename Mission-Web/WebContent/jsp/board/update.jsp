@@ -29,6 +29,6 @@ dao.insert(board);
 %>
 
 <script>
-	alert('새글 등록이 완료되었습니다')
+	alert('글이 수정되었습니다.')
 	location.href = "list2(el).jsp"
 </script>

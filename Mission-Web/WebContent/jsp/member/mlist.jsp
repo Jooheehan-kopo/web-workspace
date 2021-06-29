@@ -29,9 +29,15 @@ ResultSet rs = pstmt.executeQuery();
 	})
 </script>
 
+<link rel ="stylesheet" href="/Mission-Web/resources/css/layout.css" />
+<link rel ="stylesheet" href="/Mission-Web/resources/css/board.css" />
 </head>
 <body>
-	<div align="center">
+	<header>
+		<jsp:include page ="/jsp/include/topMenu.jsp" />
+	</header>
+	<section>
+		<div align="center">
 		<hr width ="80%">
 		<h2> * 회원목록 * </h2>
 		<hr width ="80%">
@@ -67,8 +73,11 @@ ResultSet rs = pstmt.executeQuery();
 		<button id="addmem">회원등록</button>
 	
 	</div>
+	</section>
+	<footer>
+		<%@ include file="/jsp/include/bottom.jsp" %>
+	</footer>
+</body>
+	
 </body>
 </html>
-<%
-JDBCClose.close(conn,pstmt);
-%>

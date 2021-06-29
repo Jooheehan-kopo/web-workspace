@@ -1,3 +1,4 @@
+<%@page import="kr.ac.kopo.board.dao.BoardDAO"%>
 <%@page import="kr.ac.kopo.util.JDBCClose"%>
 <%@page import="kr.ac.kopo.board.vo.BoardVO"%>
 <%@page import="java.sql.ResultSet"%>
@@ -14,6 +15,10 @@
 	3. 화면에 보여줌.
 	--%>
 	<%
+	
+	
+/* 	
+	
 	//게시물번호 추출
 	int boardNo = Integer.parseInt(request.getParameter("no"));  //문자열임. 정수로 뽑고싶은것 parseint로 바꿔줌
 	
@@ -45,8 +50,13 @@
 
 JDBCClose.close(conn,pstmt);  
 
-BoardVO board = new BoardVO(no,title,writer,content,viewCnt,regDate);
+ */
 
+int boardNo = Integer.parseInt(request.getParameter("no"));  //문자열임. 정수로 뽑고싶은것 parseint로 바꿔줌
+BoardDAO dao = new BoardDAO();
+
+
+BoardVO board= dao.detail(boardNo);
 pageContext.setAttribute("board",board);
 	
 	%>
@@ -55,6 +65,23 @@ pageContext.setAttribute("board",board);
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script src="/Mission-Web/resources/js/jquery-3.6.0.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('#golist').click(function(){
+			location.href="list2(el).jsp"
+		})
+	})
+	
+	$(document).ready(function(){
+		$('#update').click(function(){
+			location.href="updateForm.jsp?no="+${board.no}
+		})
+	})
+	
+	
+</script>
+
 <link rel ="stylesheet" href="/Mission-Web/resources/css/layout.css" />
 <link rel ="stylesheet" href="/Mission-Web/resources/css/board.css" />
 </head>
@@ -90,6 +117,11 @@ pageContext.setAttribute("board",board);
 			</tr>
 		
 		</table>
+		<br>
+		
+		<button id="golist">목록</button>
+		<button id="update">수정</button>
+		<button id="delete">삭제</button>
 	</div>
 	</section>
 	<footer>
