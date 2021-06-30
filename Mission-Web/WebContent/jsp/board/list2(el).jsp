@@ -40,7 +40,7 @@
 		//디테일로 이동하는 것이 목적 /  jstl 해석(서버)이 먼저기때문에 자바스크립트 안에도 쓸수 가 있음.
 		<c:choose>
 			<c:when test ="${not empty userVO}">
-				location.href='detail(el).jsp?no='+no; //로그인이 되어있을때만 가능. 로그인여부 알아야함.
+				location.href='detail(el).jsp?no='+no+ '&type=list'; //로그인이 되어있을때만 가능. 로그인여부 알아야함./ list에서 왔다.
 			</c:when>
 			<c:otherwise>
 				if(confirm('로그인이 필요한 서비스입니다 \n 로그인페이지로 이동하시겠습니까?'))//참이라면

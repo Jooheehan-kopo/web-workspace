@@ -1,3 +1,5 @@
+<%@page import="kr.ac.kopo.board.vo.BoardFileVO"%>
+<%@page import="java.util.List"%>
 <%@page import="kr.ac.kopo.board.dao.BoardDAO"%>
 <%@page import="kr.ac.kopo.util.JDBCClose"%>
 <%@page import="kr.ac.kopo.board.vo.BoardVO"%>
@@ -53,11 +55,20 @@ JDBCClose.close(conn,pstmt);
  */
 
 int boardNo = Integer.parseInt(request.getParameter("no"));  //문자열임. 정수로 뽑고싶은것 parseint로 바꿔줌
+String type = request.getParameter("type"); // 조회수 관련 (from list)
 BoardDAO dao = new BoardDAO();
 
+//** 게시물 조회수 증가. 전체게시글목록에서 왔을때만. (내가 게시글 눌럿을때만 조회수 증가!!!!!!)
+if(type != null && type.equals("list"))
+	dao.updateViewCnt(boardNo);
 
+//2-2 테이블에서 해당 게시물 조회.
 BoardVO board= dao.detail(boardNo);
+
+// 2-3 t_board_file테이블에서 게시물의 첨부파일 조회
+List<BoardFileVO>fileList = dao.selectFileByNo(boardNo);
 pageContext.setAttribute("board",board);
+pageContext.setAttribute("fileList",fileList);
 	
 	%>
 <!DOCTYPE html>
@@ -75,7 +86,14 @@ pageContext.setAttribute("board",board);
 	
 	$(document).ready(function(){
 		$('#update').click(function(){
-			location.href="updateForm.jsp?no="+${board.no}
+			location.href="updateForm.jsp?no=${param.no}"  //+${board.no}
+		})
+	})
+	
+	$(document).ready(function(){
+		$('#delete').click(function(){
+			if(confirm('${param.no} 번 게시글을 삭제할까요?'))
+				location.href="delete.jsp?no=${param.no}"  //+${board.no}
 		})
 	})
 	
@@ -115,6 +133,22 @@ pageContext.setAttribute("board",board);
 			<tr> <th width ="25%"> 등록일</th>
 			<td>${board.regDate }</td>
 			</tr>
+			
+			<tr> 
+			<th> 첨부파일</th>
+			<td>
+				<c:forEach items ="${fileList }" var= "file">
+				<a href="/Mission-Web/upload/${file.fileSaveName }"> <!-- 서버저장위치.링크누르면 사진 나옴 -->
+					<c:out value ="${file.fileOriName }" />
+					(${file.fileSize }bytes)
+					</a>
+					<br>
+					
+				</c:forEach>
+			</td>
+			</tr>
+			
+			
 		
 		</table>
 		<br>
