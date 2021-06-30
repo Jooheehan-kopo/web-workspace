@@ -96,6 +96,7 @@
  
  
  %>
+
  <script >
 alert('${msg}')
 location.href="${url}"
@@ -111,3 +112,6 @@ location.href="${url}"
  <c:if test="${param.id }" eq cid>
  	  <jsp:forward page ="/index.jsp"/>
  </c:if> --%>
+
+
+
