@@ -138,7 +138,7 @@ pageContext.setAttribute("fileList",fileList);
 			<th> 첨부파일</th>
 			<td>
 				<c:forEach items ="${fileList }" var= "file">
-				<a href="/Mission-Web/upload/${file.fileSaveName }"> <!-- 서버저장위치.링크누르면 사진 나옴 -->
+				<a href="/Mission-Web/upload/${file.fileSaveName }" download ="${file.fileOriName }"> <!-- 서버저장위치.링크누르면 사진 나옴 -->
 					<c:out value ="${file.fileOriName }" />
 					(${file.fileSize }bytes)
 					</a>

@@ -27,7 +27,7 @@
 				<a href="/Mission-Web/jsp/board/list2(el).jsp">게시판</a> ||
 				<c:choose>
 					<c:when test="${empty userVO }">
-						 회원가입 || 
+						 <a href="/Mission-Web/jsp/member/joinNew.jsp">회원가입</a> || 
 						<a href="/Mission-Web/jsp/login/login.jsp">로그인</a> || 
 					</c:when>
 					<c:otherwise>
