@@ -28,11 +28,19 @@
 					</tr>					
 					<tr>
 						<th>비밀번호: </th>
-						<td><input type ="text" name ="id"></td>
+						<td><input type ="password" name ="password"></td>
 					</tr>					
 					<tr>
 						<th>비밀번호 확인: </th>
-						<td><input type ="text" name ="id"></td>
+						<td><input type ="password" name ="password"></td>
+					</tr>					
+					<tr>
+						<th>주소: </th>
+						<td><input type ="text" name ="addr1"></td>
+					</tr>					
+					<tr>
+						<th>상세주소: </th>
+						<td><input type ="text" name ="addr2"></td>
 					</tr>					
 				</table>
 				<br>
