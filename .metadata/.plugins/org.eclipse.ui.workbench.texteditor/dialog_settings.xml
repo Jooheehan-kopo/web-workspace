@@ -6,7 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="&#x09;pstmt.getUpdateCount();"/>
 		<list key="findhistory">
+			<item value="&#x09;pstmt.getUpdateCount();"/>
 		</list>
 		<list key="replacehistory">
 		</list>
