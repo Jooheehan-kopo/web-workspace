@@ -21,7 +21,8 @@ public class AccSearchController implements Controller {
 		
 		//세션에 등록되어있는 user_id 불러오기
 		HttpSession session = request.getSession();
-		MemberVO vo = (MemberVO) session.getAttribute("userVO");
+		MemberVO vo = new MemberVO();
+		vo = (MemberVO) session.getAttribute("userVO");
 		String user_id = vo.getUser_id();
 		String user_cid = vo.getUser_cid();
 		if(vo.getUser_id() != null && user_id.equals(vo.getUser_id())) {

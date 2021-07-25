@@ -28,7 +28,7 @@
 
         .wrap {
         	
-            width: 500px;
+            width: 900px;
             margin: 0px auto; 
           	display: block;
         }
@@ -71,11 +71,10 @@
     
     <div class="card-columns">
         <div class="card">
-				<img class="card-img-top" src="<%=request.getContextPath() %>/images/card.png"
-					alt="Card image cap">
+				
 				<div class="card-body">
-					<a href="" class="card-title"><c:out value="${bank.user_id }"/></a>
-					<p class="card-text comment">전체 계좌정보입니다</p>
+					<a href="" class="card-title"></a>
+					<c:out value="${bank.user_id }"/><p class="card-text comment">  전체 계좌정보입니다</p>
 					<table>
 						
 						<tr>
