@@ -62,13 +62,22 @@ public class BankDAO {
 			sql.append("   where A.acc_no = B.acc_no ");
 
 
-
+			//하온
 			sql.append(" union ");
 			sql.append(" select S.ACCOUNT_NO, B.BNAME, S.BALANCE, s.reg_dt ,S.ALIAS from BANKCODE@haon_link B, ");
 			sql.append(" (select a.bcode, a.ACCOUNT_NO, a.BALANCE, a.ALIAS, a.reg_dt ");
 			sql.append(" from accounts@haon_link a, clients@haon_link c ");
 			sql.append(" where a.account_id = c.id and trim(c.CID) = trim(?)) S ");
 			sql.append("  WHERE B.CODE = S.bcode  ");
+			
+
+			
+			//조이
+			
+			sql.append(" union ");
+			sql.append(" select  account_number AS ACCOUNT_NO, '조이' AS BNAME,  account_balance AS BALANCE,  created_at ,account_alias AS ALIAS ");
+		    sql.append(" from account@JOY_LINK ");
+		    sql.append(" where member_id = (select member_id from member@JOY_LINK where trim(cid) = trim(?)) ");
 		
 
 
@@ -76,7 +85,9 @@ public class BankDAO {
 
 			pstmt.setString(1, user_cid);
 			pstmt.setString(2, user_cid);
+			pstmt.setString(3, user_cid);
 
+		
 			ResultSet rs = pstmt.executeQuery();
 
 			while (rs.next()) {
@@ -86,12 +97,6 @@ public class BankDAO {
 				String acc_money = rs.getString("acc_money");
 				String acc_date = rs.getString("acc_date");
 				String acc_name = rs.getString("acc_name");
-
-//				System.out.println("bank_name" + bank_name);
-//				System.out.println("acc_no" + acc_no);
-//				System.out.println("acc_name" + acc_name);
-//				System.out.println("acc_date" + acc_date);
-//				System.out.println("acc_money" + acc_money);
 
 				BankVO search = new BankVO(bank_name, acc_no, acc_name, acc_date, acc_money);
 				bank.add(search);
