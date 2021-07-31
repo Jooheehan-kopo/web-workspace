@@ -137,7 +137,7 @@ li.fb {
 
 li.fb a::before {
   margin: 0;
-  background-image: url("../img/fb.png");
+  background-image: url("../img/katalk.png");
 }
 
 @media only screen and (max-width: 400px) {

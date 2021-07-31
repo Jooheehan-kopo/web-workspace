@@ -12,6 +12,30 @@
 </head>
 
 <body>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script>
+		window.Kakao.init("3be42087f9ef6ce4e9bf0ead0f4319f3");
+		
+		function kakaoLogin(){
+			
+			window.Kakao.Auth.login({
+				scope:'profile_nickname, account_email, gender',
+				success: function (authObj) {
+					console.log(authObj.email);
+					window.Kakao.API.request({
+						url:'/v2/user/me',
+						success: res => {
+							const kakao_account = res.kakao_account;
+							console.log(kakao_account);
+						}
+					});
+					
+				}
+			});
+		}
+	</script>
+
+
 
     <div class="main-container">
         <div class="form-container">
@@ -20,12 +44,15 @@
 
                 <h2 class="title">Log in with</h2>
 
-                <div class="social-login">
-                    <ul>
-                        <li class="google"><a href="#">Google</a></li>
-                        <li class="fb"><a href="#">Facebook</a></li>
-                    </ul>
-                </div><!-- SOCIAL LOGIN -->
+
+				<form action="<%=request.getContextPath() %>/socialLogin.do" method="post" class="the-form">
+	                <div class="social-login">
+	                    <ul>
+	                        <li class="fb"><a href ="javascript:kakaoLogin();">kakaoTalk</a></li>
+	                        <li class="google"><a href="#">Google</a></li>
+	                    </ul>
+	                </div><!-- SOCIAL LOGIN -->
+                </form>
 
                 <div class="_or">or</div>
 

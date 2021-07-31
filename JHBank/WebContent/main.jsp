@@ -106,7 +106,18 @@ img {
 					
 					</header>
 				</article>
+			
 				<article>
+					<span class="image"> <img src="images/pic05.jpg" alt="" />
+					</span>
+					<header class="major">
+						<h3>
+							<a href="<%=request.getContextPath() %>/qnaList.do" class="link">Q&A 및 공유게시판</a>
+						</h3>
+						<p>질문/소통 자유게시판</p>
+					</header>
+				</article>
+					<article>
 					<span class="image"> <img src="images/pic04.jpg" alt="" />
 					</span>
 					<header class="major">
@@ -114,16 +125,6 @@ img {
 							<a href="landing.html" class="link">공인인증센터</a>
 						</h3>
 						<p>공인인증서 발급/재발급/폐기</p>
-					</header>
-				</article>
-				<article>
-					<span class="image"> <img src="images/pic05.jpg" alt="" />
-					</span>
-					<header class="major">
-						<h3>
-							<a href="landing.html" class="link">Q&A 및 공유게시판</a>
-						</h3>
-						<p>질문/소통 자유게시판</p>
 					</header>
 				</article>
 				<article>
