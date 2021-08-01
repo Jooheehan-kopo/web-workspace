@@ -16,6 +16,9 @@
 
 				<!-- Header -->
 				<jsp:include page="/include/header.jsp" />
+				
+		<!-- Menu -->
+		<jsp:include page="/include/menu.jsp" />
 
 				<section>
 					<!-- Table -->
@@ -28,11 +31,11 @@
 					<div style="text-align: right;">
 						<ul class="icons">
 
-							<c:if test="${not empty user_id }">
+							<%-- <c:if test="${not empty user_id }"> --%>
 								<li><a
 									href="<%=request.getContextPath()%>/qnaWriteForm.do"
-									class="button disabled">새글등록</a></li>
-							</c:if>
+									class="button">새글등록</a></li>
+							<%-- </c:if> --%>
 						</ul>
 					</div>
 

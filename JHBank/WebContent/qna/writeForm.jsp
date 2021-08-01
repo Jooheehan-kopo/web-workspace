@@ -7,6 +7,9 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
+<script>
+
+</script>
 	<jsp:include page="/include/head.jsp"/>
 	
 	
@@ -21,6 +24,9 @@
 
 							<!-- Header -->
 								<jsp:include page="/include/header.jsp"/>
+													
+							<!-- Menu -->
+							<jsp:include page="/include/menu.jsp" />
 
 
 
@@ -34,11 +40,11 @@
 					</header>
 				
 				
-				<form method="post" action="<%= request.getContextPath() %>/qna/insert.do">
+				<form method="post" action="<%= request.getContextPath() %>/qnaWriteForm.do">
 					<div class="row gtr-uniform">
 					
 					<!-- Break -->
-						<div class="col-8 col-12-small">
+						<!-- <div class="col-8 col-12-small">
 							<select name="demo-category" id="demo-category">
 								<option value="">게시판을 선택해주세요</option>
 								<option value="1">Q & A</option>
@@ -51,7 +57,7 @@
 								<option value="1">답변</option>
 							</select>
 						</div>
-					
+					 -->
 					
 					<!-- Break -->
 						<div class="col-12">
@@ -68,7 +74,7 @@
 						<!-- Break -->
 						<div class="col-12">
 							<ul class="actions">
-								<li><input type="submit" value="등록" class="primary" /></li>
+								<li><input type="submit" value="등록" class="primary" id="ok"/></li>
 								<li><input type="reset" value="초기화" /></li>
 							</ul>
 						</div>

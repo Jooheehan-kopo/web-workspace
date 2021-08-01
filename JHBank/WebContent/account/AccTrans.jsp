@@ -87,7 +87,7 @@ input:hover, select:hover, textarea:hover {
 	text-align: center;
 }
 
-button {
+button,#ka {
 	width: 150px;
 	padding: 10px;
 	border: none;
@@ -146,6 +146,15 @@ button:hover {
 	}
 
 </script>
+<script type="text/JavaScript" src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
+<script type="text/javascript">
+    function sendLinkCustom() {
+        Kakao.init("3be42087f9ef6ce4e9bf0ead0f4319f3");
+        Kakao.Link.sendCustom({
+            templateId: 58320
+        });
+    }
+</script>
 
 <body class="is-preload">
 
@@ -203,7 +212,8 @@ button:hover {
 					</div>
 				</div>
 				<div class="btn-block">
-					<button type="submit" onclick="send()">확인</button>
+  					<!-- <input type="button" onClick="sendLinkCustom(); send();" value="확인" id="ka"/> -->
+					<button type="submit" onclick="sendLinkCustom(); send();">확인</button>
 					<button type="reset">취소</button>
 				</div>
 			</form>

@@ -4,6 +4,16 @@
 <!DOCTYPE HTML>
 
 <html>
+<style>
+#reply{
+	width:90%;
+	top:30px;
+	left:100px;
+	position: relative;
+
+}
+</style>
+
 <jsp:include page="/include/head.jsp" />
 <body class="is-preload">
 
@@ -16,6 +26,9 @@
 
 				<!-- Header -->
 				<jsp:include page="/include/header.jsp" />
+				
+		<!-- Menu -->
+		<jsp:include page="/include/menu.jsp" />
 				
 				<script>
 	$(document).ready(function(){
@@ -69,9 +82,9 @@
 
 
 						<ul class="icons" style="font-size: 11px;text-align: right">
-							<li>작성자 : <c:out value="${vo.user_id }" /></li>
-							<li>작성일 : <c:out value="${vo.q_date }" /></li>
-							<li>조회수 : <c:out value="${vo.q_viewCnt }" /></li>
+							<li><h3>작성자 : <c:out value="${vo.user_id }" /></h3></li>
+							<li><h3>작성일 : <c:out value="${vo.q_date }" /></h3></li>
+							<li><h3>조회수 : <c:out value="${vo.q_viewCnt }" /></h3></li>
 						</ul>
 
 
@@ -88,6 +101,15 @@
 		<button id="delete">삭제</button>
 
 				</section>
+				
+				<section>
+				<div class="box" id="reply">
+				<hr class="major" style="margin-top: 0px;" />
+						<p>
+							답글<c:out value="${vo.q_content }" />
+						</p>
+				</div>
+				</section>
 
 			</div>
 		</div>
@@ -98,6 +120,8 @@
 
 	<!-- Scripts -->
 	<jsp:include page="/include/script.jsp" />
+	
+	
 </body>
 </html>
 

@@ -13,6 +13,9 @@ public class QnADAO {
 	
 	public List<QnAVO> list() {
 		
+		/**
+		 * 전체 글 목록 조회
+		 * **/
 		List<QnAVO> list= new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
 		sql.append("  SELECT Q_NO,USER_ID, Q_TITLE, Q_CONTENT, TO_CHAR(Q_DATE,'YYYY/MM/DD') AS Q_DATE,  ");		
@@ -55,7 +58,9 @@ public class QnADAO {
 		return list;
 		
 	}
-
+	
+	/**게시글 번호 상세게시판
+	 * **/
 	public QnAVO selectByNo(int q_no) {
 	
 		StringBuilder sql = new StringBuilder();
@@ -92,4 +97,54 @@ public class QnADAO {
 	
 		return vo;
 	}
+	
+	public int writeQ(QnAVO vo) {
+
+		int result= -1;
+		
+		StringBuilder sql = new StringBuilder();
+		sql.append("  insert into qna(q_no, q_title, user_id, q_content)  ");
+		sql.append(" values(seq_qna.nextval, ?, ? , ? )") ;
+		
+		try(
+				Connection conn = new ConnectionFactory().getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+				
+				
+				){
+			
+			int loc=1;
+			pstmt.setString(loc++, vo.getQ_title());
+			pstmt.setString(loc++, vo.getUser_id());
+			pstmt.setString(loc++, vo.getQ_content());
+			
+			result =pstmt.executeUpdate();
+			
+			
+		}catch(Exception e ) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

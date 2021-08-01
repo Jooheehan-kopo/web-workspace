@@ -122,9 +122,9 @@ img {
 					</span>
 					<header class="major">
 						<h3>
-							<a href="landing.html" class="link">공인인증센터</a>
+							<a href="<%=request.getContextPath() %>/account/others.jsp" class="link">다른은행 바로가기</a>
 						</h3>
-						<p>공인인증서 발급/재발급/폐기</p>
+						<p>조이은행 / 하온은행</p>
 					</header>
 				</article>
 				<article>
