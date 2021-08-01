@@ -8,26 +8,26 @@ public class QnAVO {
 	private String q_date;
 	private int q_viewCnt;
 	private String q_content;
-	private int commnet_cnt;
+	private int comment_no;
 	
-	private String q_writer;
+	
 	
 	public QnAVO() {
 		super();
 	}
 
 
-	public QnAVO(int q_no, String q_title, String user_id, String q_writer, String q_date, int q_viewCnt,
-			String q_content, int commnet_cnt) {
+	public QnAVO(int q_no, String q_title, String user_id,  String q_date, int q_viewCnt,
+			String q_content, int comment_no) {
 		super();
 		this.q_no = q_no;
 		this.q_title = q_title;
 		this.user_id = user_id;
-		this.q_writer = q_writer;
+		
 		this.q_date = q_date;
 		this.q_viewCnt = q_viewCnt;
 		this.q_content = q_content;
-		this.commnet_cnt = commnet_cnt;
+		this.comment_no = comment_no;
 	}
 
 
@@ -61,16 +61,6 @@ public class QnAVO {
 	}
 
 
-	public String getQ_writer() {
-		return q_writer;
-	}
-
-
-	public void setQ_writer(String q_writer) {
-		this.q_writer = q_writer;
-	}
-
-
 	public String getQ_date() {
 		return q_date;
 	}
@@ -101,22 +91,25 @@ public class QnAVO {
 	}
 
 
-	public int getCommnet_cnt() {
-		return commnet_cnt;
+	public int getcomment_no() {
+		return comment_no;
 	}
 
 
-	public void setCommnet_cnt(int commnet_cnt) {
-		this.commnet_cnt = commnet_cnt;
+	public void setcomment_no(int comment_no) {
+		this.comment_no = comment_no;
 	}
 
 
 	@Override
 	public String toString() {
-		return "QnAVO [q_no=" + q_no + ", q_title=" + q_title + ", user_id=" + user_id + ", q_writer=" + q_writer
-				+ ", q_date=" + q_date + ", q_viewCnt=" + q_viewCnt + ", q_content=" + q_content + ", commnet_cnt="
-				+ commnet_cnt + "]";
+		return "QnAVO [q_no=" + q_no + ", q_title=" + q_title + ", user_id=" + user_id + ", q_date=" + q_date
+				+ ", q_viewCnt=" + q_viewCnt + ", q_content=" + q_content + ", comment_no=" + comment_no + "]";
 	}
+
+
+
+	
 	
 	
 	

@@ -28,9 +28,9 @@
 					<div style="text-align: right;">
 						<ul class="icons">
 
-							<c:if test="${not empty user }">
+							<c:if test="${not empty user_id }">
 								<li><a
-									href="<%=request.getContextPath()%>/qna/insertForm.do"
+									href="<%=request.getContextPath()%>/qnaWriteForm.do"
 									class="button disabled">새글등록</a></li>
 							</c:if>
 						</ul>
@@ -55,6 +55,8 @@
 
 										<tr>
 											<td><c:out value="${qna.q_no }" /></td>
+											
+											
 									<%-- 		<td><c:if test="${qna.type eq 'A' }">
 													<c:forEach begin="0" end="${qna.groupDepth - 1}" var="i">
 													&nbsp;
@@ -66,7 +68,8 @@
 												href="<%=request.getContextPath()%>/qna/detail.do?no=${qna.no }">
 													<c:out value="${qna.subject }" />
 											</a></td --%>
-											<td><c:out value="${qna.q_title }"/></td>
+											<td><a href="<%=request.getContextPath()%>/qnaDetail.do?q_no=${qna.q_no }">
+											<c:out value="${qna.q_title }"/></a></td>
 											<td><c:out value="${qna.user_id }" /></td>
 											<td><c:out value="${qna.q_date }" /></td>
 											<td><c:out value="${qna.q_viewCnt }" /></td>
@@ -77,6 +80,7 @@
 
 								</tbody>
 							</table>
+							
 
 						</div>
 
@@ -89,7 +93,7 @@
 									<li><span class="button disabled">Prev</span></li>
 								</c:when>
 								<c:otherwise>
-									<li><a href="<%=request.getContextPath() %>/qna/list.do?page=${ startPage - 5}" class="button">Prev</a></li>
+									<li><a href="<%=request.getContextPath() %>/qnaList.do?page=${ startPage - 5}" class="button">Prev</a></li>
 								</c:otherwise>
 							</c:choose>
 

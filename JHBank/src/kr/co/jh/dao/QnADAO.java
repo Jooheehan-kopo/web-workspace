@@ -39,7 +39,7 @@ public class QnADAO {
 				qna.setQ_no(q_no);
 				qna.setQ_title(q_title);
 				qna.setUser_id(user_id);
-				qna.setCommnet_cnt(comment_no);
+				qna.setcomment_no(comment_no);
 				qna.setQ_date(q_date);
 				qna.setQ_viewCnt(q_viewCnt);
 				
@@ -54,5 +54,42 @@ public class QnADAO {
 		
 		return list;
 		
+	}
+
+	public QnAVO selectByNo(int q_no) {
+	
+		StringBuilder sql = new StringBuilder();
+		
+		
+		sql.append("  SELECT Q_NO,USER_ID, Q_TITLE, Q_CONTENT,  ");
+		sql.append("  TO_CHAR(Q_DATE,'YYYY/MM/DD') AS Q_DATE, Q_VIEWCNT, COMMENT_NO  ");
+		sql.append("    FROM QNA where q_no=?  ");
+		
+		QnAVO vo =null;
+		
+		try(
+			Connection conn = new ConnectionFactory().getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
+								
+				){
+			pstmt.setInt(1, q_no);
+			ResultSet rs = pstmt.executeQuery();
+			
+			rs.next();
+			int no = rs.getInt("q_no");
+			String user_id = rs.getString("user_id");
+			String q_title = rs.getString("q_title");
+			String q_content = rs.getString("q_content");
+			int q_viewCnt = rs.getInt("q_viewcnt");
+			String q_date = rs.getString("q_date");
+			int comment_no = rs.getInt("comment_no");
+			
+			vo = new QnAVO(no,q_title,user_id,q_date,q_viewCnt,q_content, comment_no);
+			System.out.println("vo"+vo);
+		}catch(Exception e ) {
+			e.printStackTrace();
+		}
+	
+		return vo;
 	}
 }
