@@ -16,7 +16,7 @@ public class QnADAO {
 		List<QnAVO> list= new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
 		sql.append("  SELECT Q_NO,USER_ID, Q_TITLE, Q_CONTENT, TO_CHAR(Q_DATE,'YYYY/MM/DD') AS Q_DATE,  ");		
-		sql.append("  Q_VIEWCNT, COMMENT_NO   FROM QNA  ");
+		sql.append("  Q_VIEWCNT, COMMENT_NO FROM QNA  ");
 		
 		try( Connection conn = new ConnectionFactory().getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql.toString());
@@ -28,17 +28,20 @@ public class QnADAO {
 				int q_no = rs.getInt("q_no");
 				String user_id = rs.getString("user_id");
 				String q_title = rs.getString("q_title");
+				//String q_content = rs.getString("q_content");
 				String q_date = rs.getString("q_date");
-				int q_viewcnt = rs.getInt("q_viewcnt");
-				int comment_cnt = rs.getInt("comment_cnt");
+				int q_viewCnt = rs.getInt("q_viewcnt");
+				int comment_no = rs.getInt("comment_no");
+				
+				System.out.println("q_no:" + q_no);
 				
 				QnAVO qna = new QnAVO();
 				qna.setQ_no(q_no);
 				qna.setQ_title(q_title);
 				qna.setUser_id(user_id);
-				qna.setCommnet_cnt(comment_cnt);
+				qna.setCommnet_cnt(comment_no);
 				qna.setQ_date(q_date);
-				qna.setQ_viewCnt(q_viewcnt);
+				qna.setQ_viewCnt(q_viewCnt);
 				
 				list.add(qna);
 				
@@ -48,6 +51,7 @@ public class QnADAO {
 			e.printStackTrace();
 			
 		}
+		
 		return list;
 		
 	}

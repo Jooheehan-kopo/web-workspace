@@ -54,8 +54,8 @@
 									<c:forEach items="${list }" var="qna">
 
 										<tr>
-											<td><c:out value="${qna.no }" /></td>
-											<td><c:if test="${qna.type eq 'A' }">
+											<td><c:out value="${qna.q_no }" /></td>
+									<%-- 		<td><c:if test="${qna.type eq 'A' }">
 													<c:forEach begin="0" end="${qna.groupDepth - 1}" var="i">
 													&nbsp;
 												</c:forEach>
@@ -65,10 +65,11 @@
 												</c:if> <a
 												href="<%=request.getContextPath()%>/qna/detail.do?no=${qna.no }">
 													<c:out value="${qna.subject }" />
-											</a></td>
-											<td><c:out value="${qna.writer }" /></td>
-											<td><c:out value="${qna.regdate }" /></td>
-											<td><c:out value="${qna.viewCnt }" /></td>
+											</a></td --%>
+											<td><c:out value="${qna.q_title }"/></td>
+											<td><c:out value="${qna.user_id }" /></td>
+											<td><c:out value="${qna.q_date }" /></td>
+											<td><c:out value="${qna.q_viewCnt }" /></td>
 										</tr>
 
 
